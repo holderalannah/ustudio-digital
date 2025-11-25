@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fff;
+  --foreground: #171717;
+  --white-gradient: linear-gradient(180deg,rgba(0, 32, 95, 0.12) 0%, rgba(255, 255, 255, 1) 22%, rgba(255, 255, 255, 1) 100%);
+}
+
+.bg-white-gradient {
+  background: var(--white-gradient);
+}
+
+.bg-white-overlay {
+  content: '';
+  background: url('../public/images/bg-overlay.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  border-bottom-right-radius: 35px;
+  border-bottom-left-radius: 35px;
+  margin-bottom: 20px;
+}
+
+@theme inline {
+  --color-darkPink: #d01a71;
+  --color-darkPurple: #8A2261;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sofiaPro: var(--font-sofiaPro);
+  --bg-white-gradient: var(--white-gradient);
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sofiaPro);
+  font-weight: 500;
+}
+
+p a:hover, li > a:hover {
+  text-decoration-line: underline;
+}
