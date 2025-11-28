@@ -17,12 +17,11 @@ function Arrow() {
 
 export default function Cta({text, url}){
     return(
-        <Link className='bg-white flex flex-row items-center justify-center w-[90%] max-w-[600px] mx-auto rounded-4xl text-darkPurple hover:bg-darkPurple hover:text-white hover:underline' href={url}>
+        <Link className='bg-white flex flex-row items-center justify-center w-[90%] max-w-[600px] mx-auto rounded-4xl text-darkPurple transition duration-300 ease-in-out hover:bg-darkPurple hover:text-white hover:underline' href={url}>
             <div className="flex gap-0.5 items-center justify-center px-[22px] py-3.5 relative">
                 <p className="font-bold leading-[1.4] relative shrink-0 text-[16px] text-center text-nowrap tracking-[0.4px] whitespace-pre" style={{ fontVariationSettings: "'opsz' 14" }}>
                     {text}
                 </p>
-                <Arrow />
             </div>
         </Link>
     )

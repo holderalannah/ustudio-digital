@@ -8,7 +8,7 @@ export default function Header(){
     const navLinks = [
         {
             linkName : "About Us",
-            linkUrl: "about"
+            linkUrl: "about-us"
         },
         {
             linkName : "Web Work",

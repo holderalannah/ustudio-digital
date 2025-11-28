@@ -6,8 +6,31 @@
   --white-gradient: linear-gradient(180deg,rgba(0, 32, 95, 0.12) 0%, rgba(255, 255, 255, 1) 22%, rgba(255, 255, 255, 1) 100%);
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .bg-white-gradient {
   background: var(--white-gradient);
+}
+
+.bg-header {
+  background-image: url('../public/images/ustudio-pattern.png');
+}
+
+.bg-header:after {
+    content: '';
+    display: block;
+    background: rgba(138, 34, 97, 0.85);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    position: absolute;
+}
+
+.bg-header *{
+  position: relative;
+  z-index: 10;
 }
 
 .bg-white-overlay {

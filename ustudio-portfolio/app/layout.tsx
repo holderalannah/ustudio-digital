@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Innerpage from './Components/Layout/Innerpage';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import localFont from 'next/font/local';

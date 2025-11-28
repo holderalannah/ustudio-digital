@@ -1,7 +1,4 @@
 
-import { SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -16,7 +13,7 @@ export default function WebCard({cardImg, cardUrl, cardProject, cardBrand}){
                 <p className='text-sm uppercase font-bold'>{cardBrand}</p>
                 <p className='text-lg'>{cardProject}</p>
 
-                <Link href={cardUrl} className='text-sm'>View</Link>
+                <Link href={cardUrl} className='text-sm hover:underline'>View</Link>
             </div>
         </>
     )
