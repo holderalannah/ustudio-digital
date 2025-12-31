@@ -40,10 +40,10 @@ export default function WebWork(){
         <Innerpage title="Web Portfolio">
             <ul id="portfolio-brands" className="flex gap-5">
                 {works.map((work) => 
-                    <li key={Math.random()} className="w-1/3 relative shadow-xl rounded-3xl bg-white group/item">
+                    <li key={work.projectTitle} className="w-1/3 relative shadow-xl rounded-3xl bg-white group/item">
                         <Link className="transition-all no-underline! hover:text-white group-hover/item:no-underline " href={work.projectUrl}>
                             
-                            <div className="transition-all w-full h-full absolute top-0 left-0 group-hover/item:bg-[rgba(22,20,158,0.65)] rounded-3xl z-10"></div>
+                            <div className="transition-all w-full h-full absolute top-0 left-0 group-hover/item:bg-[rgba(22,20,158,0.85)] rounded-3xl z-10"></div>
 
                             <div className=" ">
                                 <div className="relative h-[250px] w-full overflow-hidden">
@@ -54,7 +54,7 @@ export default function WebWork(){
                                     <p className="text-lg leading-normal font-bold">{work.projectTitle}</p>
 
                                     <div className="pt-5">
-                                        <Link href={work.projectUrl} className="transition-all group-hover/item:underline"><span className="flex gap-2 items-center font-medium">View Website <RightArrow className='fill-black w-5 group-hover/item:fill-darkPink' /></span></Link>
+                                        <Link href={work.projectUrl} className="transition-all group-hover/item:underline"><span className="flex gap-2 items-center font-medium">View Website <RightArrow className='fill-black w-5 group-hover/item:fill-white' /></span></Link>
                                     </div>
                                 </div>
 
