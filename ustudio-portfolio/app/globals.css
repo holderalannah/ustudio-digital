@@ -75,3 +75,39 @@ body {
 p a:hover, li > a:hover {
   text-decoration-line: underline;
 }
+
+/* slider styles */
+
+.swiper-wrapper {
+  padding-bottom: 5.125rem;
+}
+
+.swiper-pagination {
+  bottom: 2rem !important;
+}
+
+body .swiper-pagination-bullet-active {
+  background: var(--swiper-pagination-color, var(--color-darkPink));
+}
+
+.swiper-nav-container button.swiper-nav-btns {
+  cursor: pointer;
+  border-radius: 100%;
+  background: var(--color-darkPink);
+  width: 46px;
+  height: 46px;
+  display: flex;
+  justify-content: center;
+}
+
+.swiper-nav-container button.swiper-nav-btns:disabled {
+  opacity: 0.65;
+}
+
+/* .swiper-nav-container button.swiper-nav-btns > * {
+  font-size: 1px;
+  position: absolute;
+  opacity: 0;
+} */
+
+/* end of slider styles */
