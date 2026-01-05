@@ -31,7 +31,7 @@ export default function Header(){
                         <Image className='max-w-[220px]' src={SiteLogo} alt="U-Studio Logo" />
                     </Link>
                 </div>
-                <Nav obj={navLinks} addedClass="flex justify-around gap-5 lg:gap-7 xl:gap-12 w-full font-semibold" />
+                <Nav obj={navLinks} addedClass="flex justify-around gap-5 lg:gap-7 xl:gap-12 w-full font-semibold hidden" />
             </div>
         </header>
     )

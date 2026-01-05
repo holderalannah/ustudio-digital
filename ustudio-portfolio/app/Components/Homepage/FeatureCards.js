@@ -12,7 +12,25 @@ import 'swiper/css/pagination';
 import WebCard from './WebCard';
 import CampaignCard from './CampaignCard'
 
-export default function FeatureCards({title, cardInfo, campaign, sliderNumber}){
+export default function FeatureCards({title, cardInfo, campaign, sliderNumber }){
+
+    const swiperBreakpoints = {
+        // when window width is >= 320px
+        320: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+        },
+        // when window width is >= 768px
+        768: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+        },
+        // when window width is >= 1024px
+        1024: {
+            slidesPerView: sliderNumber,
+            spaceBetween: 50,
+        },
+    };
 
   
     return(
@@ -30,6 +48,7 @@ export default function FeatureCards({title, cardInfo, campaign, sliderNumber}){
                 enabled: true,
                 }}
                 slidesPerView={sliderNumber}
+                breakpoints={swiperBreakpoints}
                 onSlideChange={() => console.log('slide change')}
                 onSwiper={(swiper) => console.log(swiper)}
             >
@@ -43,6 +62,7 @@ export default function FeatureCards({title, cardInfo, campaign, sliderNumber}){
                         <RightArrow className='fill-white opacity-100 w-5 group-hover/item:opacity-100' />
                     </button>
                 </div>
+
                 {cardInfo.map((card) =>{
                     return(
                         <SwiperSlide>

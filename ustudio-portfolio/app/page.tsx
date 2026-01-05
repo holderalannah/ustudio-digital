@@ -82,7 +82,7 @@ export default function Home() {
   return (
     <div id="home-page" className="mt-5">
       <Container>
-        <h1 className="font-normal text-5xl mx-auto text-center leading-[0.85] tracking-[-2px] md:text-6xl lg:text-8xl lg:max-w-[931px] lg:tracking-[-4px]">Hello from your in house agency</h1>
+        <h1 className="font-normal text-5xl mx-auto text-center leading-[0.85] tracking-[-2px] md:text-6xl lg:text-8xl lg:max-w-[931px] lg:tracking-[-3.4px]">Hello from your in house&nbsp;agency</h1>
 
         <div className="hero-img-container mt-5 lg:mt-16 lg:mb-20">
           <Image className="max-w-[1110px] mx-auto w-full " src={HeroImg}  alt="Hero Image" />
