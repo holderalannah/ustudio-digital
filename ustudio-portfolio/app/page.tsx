@@ -93,7 +93,7 @@ export default function Home() {
         <Brands />
 
         <div className="pb-10">
-          <FeatureCards sliderNumber={4} campaign={true} title="Newest Campaigns" cardInfo={campaigns} />
+          <FeatureCards sliderNumber={4} campaign={true} title="Preview Our Campaigns" cardInfo={campaigns} />
         </div>
         
       </Container>

@@ -76,6 +76,24 @@ p a:hover, li > a:hover {
   text-decoration-line: underline;
 }
 
+/* navigation */
+nav ul li a:hover,
+nav ul li a {
+  text-decoration: none;
+  transition: all 0.9s ease;
+}
+
+nav ul li a.active:before,
+nav ul li a:hover:before {
+  background: var(--color-darkPink);
+  content: '';
+  display: block;
+  height: 2px;
+  position: absolute;
+  bottom: -4.5px;
+  width: 100%;
+}
+
 /* slider styles */
 
 .swiper-wrapper {

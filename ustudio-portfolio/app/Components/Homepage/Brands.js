@@ -6,7 +6,9 @@ import DMCLogo from '../../../public/images/logos/circle-dmc.png';
 import DoveLogo from '../../../public/images/logos/circle-dove.png';
 import HellmannsLogo from '../../../public/images/logos/circle-hellmanns.png';
 import KnorrLogo from '../../../public/images/logos/circle-knorr.png';
+import SheaMoistureLogo from '../../../public/images/logos/circle-sheaMoisture.png';
 import TresemmeLogo from '../../../public/images/logos/circle-tresemme.png';
+import VaselineLogo from '../../../public/images/logos/circle-tresemme.png';
 
 export default function Brands(){
 
@@ -14,37 +16,47 @@ export default function Brands(){
         {
             brandName: "Axe",
             brandImg: AxeLogo,
-            brandUrl: "/",
+            brandUrl: "https://www.axe.com/ca/en/home.html",
         },
         {
             brandName: "Degree",
             brandImg: DegreeLogo,
-            brandUrl: "/",
+            brandUrl: "https://www.degreedeodorant.com/ca/en/home.html",
         },
         {
             brandName: "Dove",
             brandImg: DoveLogo,
-            brandUrl: "/",
+            brandUrl: "https://www.dove.com/ca/en/home.html",
         },
         {
             brandName: "Dove Men+Care",
             brandImg: DMCLogo,
-            brandUrl: "/",
+            brandUrl: "https://www.dove.com/ca/en/men-care.html",
         },
          {
             brandName: "Hellmanns",
             brandImg: HellmannsLogo,
-            brandUrl: "/",
+            brandUrl: "https://www.hellmanns.com/ca/en/home.html",
         },
         {
             brandName: "Knorr",
             brandImg: KnorrLogo,
-            brandUrl: "/",
+            brandUrl: "https://www.knorr.com/ca/en/home.html",
+        },
+        {
+            brandName: "SheaMoisture",
+            brandImg: SheaMoistureLogo,
+            brandUrl: "https://www.sheamoisture.com/ca/en/home.html",
         },
         {
             brandName: "Tresemme",
             brandImg: TresemmeLogo,
-            brandUrl: "/",
+            brandUrl: "https://www.tresemme.com/ca/en/home.html",
+        },
+         {
+            brandName: "Vaseline",
+            brandImg: VaselineLogo,
+            brandUrl: "https://www.vaseline.com/ca/en/home.html",
         }
     ];
 
@@ -54,7 +66,7 @@ export default function Brands(){
             <div className='size-full'>
                 <ul className='flex flex-wrap justify-center gap-4 mt-4.5 xl:flex-nowrap'>
                     {brandList.map(brand => {
-                        return <Link className='transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-115' key={brand.brandName} href={brand.brandUrl}><Image src={brand.brandImg} alt={brand.brandName} width={190} height={190} /></Link>
+                        return <Link target='_blank' className='transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-115' key={brand.brandName} href={brand.brandUrl}><Image src={brand.brandImg} alt={brand.brandName} width={190} height={190} /></Link>
                     })}
                 </ul>
 
