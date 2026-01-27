@@ -8,7 +8,7 @@ import HellmannsLogo from '../../../public/images/logos/circle-hellmanns.png';
 import KnorrLogo from '../../../public/images/logos/circle-knorr.png';
 import SheaMoistureLogo from '../../../public/images/logos/circle-sheaMoisture.png';
 import TresemmeLogo from '../../../public/images/logos/circle-tresemme.png';
-import VaselineLogo from '../../../public/images/logos/circle-tresemme.png';
+import VaselineLogo from '../../../public/images/logos/circle-vaseline.png';
 
 export default function Brands(){
 
