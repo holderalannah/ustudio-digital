@@ -15,7 +15,14 @@ export default function EmailCampaigns() {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedItem, setSelectedItem] = useState(null);
 
-    const openModal = (work) => {
+    interface Work {
+        projectTitle: string;
+        projectBrand: string;
+        projectYear: string;
+        projectImg: string;
+    }
+
+    const openModal = (work: any) => {
         setSelectedItem(work);
         setIsOpen(true);
     };
