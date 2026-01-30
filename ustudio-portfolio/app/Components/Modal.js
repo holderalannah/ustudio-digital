@@ -1,12 +1,10 @@
 'use client'
 
 import { Dialog, DialogBackdrop, DialogPanel, Transition } from '@headlessui/react'
-import { useState, Fragment } from 'react'
+import { Fragment } from 'react'
 
 export default function Modal({children, isOpen, onClose}){
 
-  //  let [isOpen, setIsOpen] = useState(false)
-//open={isOpen} onClose={() => setIsOpen(false)}
     return(
         <Transition appear show={isOpen} as={Fragment}>
             <Dialog className="relative z-50" onClose={onClose}>

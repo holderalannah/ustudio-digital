@@ -11,9 +11,9 @@ export default function WebWork(){
         // rgba(138,34,97,0.65) rgb(207,28,113)
         // rgba(13,131,198,0.65) rgba(7,74,118,0.65) rgb(110,165,68) rgb(22,20,158)
         <Innerpage title="Web Portfolio">
-            <ul id="portfolio-brands" className="flex gap-5">
+            <ul id="portfolio-brands" className="flex gap-5 flex-wrap">
                 {webDevworks.map((work) => 
-                    <li key={work.projectTitle} className="w-1/3 relative shadow-xl rounded-3xl bg-white group/item">
+                    <li key={work.projectTitle} className="w-full md:w-[32%] relative shadow-xl rounded-3xl bg-white xl:w-[23.7%] group/item">
                         <Link className="transition-all no-underline! hover:text-white group-hover/item:no-underline " href={work.projectUrl}>
                             
                             <div className="transition-all w-full h-full absolute top-0 left-0 group-hover/item:bg-[rgba(22,20,158,0.85)] rounded-3xl z-10"></div>

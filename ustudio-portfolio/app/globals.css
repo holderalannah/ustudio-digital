@@ -129,3 +129,15 @@ body .swiper-pagination-bullet-active {
 } */
 
 /* end of slider styles */
+/* socials page styles */
+.socials-pin-layout {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, var(--card_width));
+  grid-auto-rows: var(--row_increment);
+  justify-content: center;
+}

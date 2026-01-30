@@ -11,6 +11,19 @@ import SheaBodyGlow from '../../public/images/campaigns/project-campaign-lux-bod
 import UniThanks from '../../public/images/campaigns/project-campaign-unilever-thanksandgiving.png'
 
 export const campaigns = [
+     {
+            projectYear: "2024",
+            projectBrand: "Dove",
+            projectTitle: "Whole Body Deodorants",
+            projectImg: DoveEA,
+            project: "Dove Whole Body Deodorants",
+            projectBusinessGroup: "Personal Care",
+            projectCategory: "Skin Cleansing",
+            projectBriefing: "Develop a landing page and a WYNG page to promote Dove's new Women's Whole Body Deodorants, featuring the latest products from the collection. This project emphasizes analytics, incorporating Meta and TikTok pixels, as part of a major campaign highlighting Dove's Whole Body Deodorants. The focus is on providing protection not only for underarms but also for thighs and feet.",
+            projectSolution: "The WYNG experience mirrors the Whole Body landing page with interactive elements like a product slider but also includes a Dove-focused social media playlist of influencers using the products, and animations to create an engaging user experience and promote the Whole Body Deodorants.",
+            projectPlatform: "WYNG",
+            projectUrl: "Unavailable",
+        },
         {
             projectYear: "2025",
             projectBrand: "Dove Men+Care",
@@ -96,8 +109,8 @@ export const campaigns = [
             projectTitle: "Dove Hair Contest",
             projectImg: DoveHair,
             project: "Dove Hair Contest",
-            projectBusinessGroup: "Personal Care",
-            projectCategory: "Personal Care",
+            projectBusinessGroup: "Beauty & Wellbeing",
+            projectCategory: "Hair Care",
             projectBriefing: "Launching a campaign for Dove's hair contest, where consumers simply purchase a product from the line, fill out a form, and upload their receipt for a chance to win.",
             projectSolution: "Develop a WYNG campaign to showcase the 2025 Dove Hair Contest, offering consumers the exciting chance to win $1,000 worth of Dove PR packages. Key visuals guide users on how to participate, and below the submission form, a product slider highlights items from the Dove Intensive Repair haircare line.​",
             projectPlatform: "WYNG",

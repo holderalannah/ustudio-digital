@@ -2,9 +2,7 @@
 
 import Innerpage from "../Components/Layout/Innerpage";
 import Image from "next/image";
-import Link from "next/link";
 import CampaignModal from '../Components/CampaignModal';
-import Modal from "../Components/Modal";
 import { campaigns } from '../data/campaign-data';
 import { useState } from "react";
 
@@ -14,13 +12,6 @@ export default function EmailCampaigns() {
 
     const [isOpen, setIsOpen] = useState(false);
     const [selectedItem, setSelectedItem] = useState(null);
-
-    interface Work {
-        projectTitle: string;
-        projectBrand: string;
-        projectYear: string;
-        projectImg: string;
-    }
 
     const openModal = (work: any) => {
         setSelectedItem(work);
@@ -44,7 +35,7 @@ export default function EmailCampaigns() {
                             
                             <div className="transition-all w-full h-full absolute top-0 left-0 group-hover/item:bg-[rgba(22,20,158,0.65)] rounded-3xl z-10"></div>
 
-                            <div className=" ">
+                            <div>
                                 <div className="relative h-[340px] w-full rounded-t-3xl overflow-hidden">
                                     <Image src={work.projectImg} alt={work.projectTitle} className='-mt-5 shadow-2xl absolute top-0 left-auto right-auto m-auto' />
                                 </div>
