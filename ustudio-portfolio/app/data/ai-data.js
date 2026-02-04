@@ -1,4 +1,4 @@
-
+import ollyCostco from '../../public/images/socials/socials-olly-costco.jpg'
 
 export const aiSolutions = [
     {
@@ -7,7 +7,7 @@ export const aiSolutions = [
         projectTitle: "Bring Out The Best Adapts",
         projectThumbnail: ollyCostco,
         projectImg: ollyCostco,
-        project: "ALOT",
+        project: "",
         projectBusinessGroup: "Foods",
         projectCategory: "Condiments",
         projectBriefing: "We were the test studio to adapt global Hellmann's assets for the Canadian market. The assets were built in Pencil by the global team with the intention that elements (packshots, copy, backgrounds, etc) could be easily swapped out, streamlining the process for localizing global assets moving forward​",

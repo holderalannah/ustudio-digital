@@ -36,7 +36,7 @@ export default function FeatureCards({title, cardInfo, campaign, sliderNumber })
     return(
         <section className='my-10 lg:my-10'>
              <h2 className='leading-[1.45] flex flex-col font-medium justify-center text-[36px] text-black text-left mb-0 tracking-[-0.18px]'>{title}</h2>
-            <Swiper className='swiper-feature-slider !pt-14'
+            <Swiper className='swiper-feature-slider pt-14!'
                 modules={[ Navigation, Pagination, A11y ]}
                 spaceBetween={50}
                 navigation={{ 

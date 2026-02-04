@@ -25,9 +25,13 @@ export default function Header(){
             linkName : "Socials",
             linkUrl: "socials"
         },
-          {
+        {
             linkName : "AI Solutions",
             linkUrl: "ai-solutions"
+        },
+        {
+            linkName : "Brands",
+            linkUrl: "brand"
         }
     ];
 
