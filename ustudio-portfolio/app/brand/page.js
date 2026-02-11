@@ -32,7 +32,7 @@ export default function Page() {
     },[brandProjects])
 
     return(
-          <Innerpage title="Search By Brand">
+          <Innerpage title="Filter By Brand">
     
         <Container>
             <div className='min-h-[700px]'>
