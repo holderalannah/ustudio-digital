@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import SiteLogo from '../../public/ustudio-logo.png';
@@ -51,6 +51,15 @@ export default function Header(){
         }
     }
 
+    useEffect(() => {
+        if (open === true){
+            document.querySelector('body').classList.add('remove-overflow');
+        } else {
+
+            document.querySelector('body').classList.remove('remove-overflow')
+        }
+    },[open]);
+
     return(
         <header id="header">
             <div className='flex mx-auto w-[85%] max-w-6xl justify-between items-center relative lg:justify-between xl:max-w-7xl'>
@@ -64,7 +73,7 @@ export default function Header(){
                     <span className={ `${menuBtn} duration-50! ${ open && 'opacity-0 -translate-5'}`}></span>
                     <span className={ `${menuBtn} ${ open && menuBtnOpen + ' -rotate-135'}`}></span>
                 </button>
-                <Nav obj={navLinks} addedNavClass={`transition-all duration-200 ease-in ${open ? 'fixed top-[85px] left-0 w-full h-full bg-white p-6' : 'hidden lg:block lg:static lg:bg-transparent lg:w-auto lg:h-auto'} lg:block`} addedClass={`${open ? 'flex flex-col lg:flex-row' : ''} justify-around gap-5 w-full lg:flex lg:gap-7 xl:gap-12 font-semibold`} />
+                <Nav obj={navLinks} addedNavClass={`transition-all duration-200 ease-in ${open ? 'fixed top-[85px] left-0 w-full h-full bg-white p-6 z-[200]' : 'hidden lg:block lg:static lg:bg-transparent lg:w-auto lg:h-auto'} lg:block`} addedClass={`${open ? 'flex flex-col lg:flex-row' : ''} justify-around gap-5 w-full lg:flex lg:gap-7 xl:gap-12 font-semibold`} />
             </div>
         </header>
     )
