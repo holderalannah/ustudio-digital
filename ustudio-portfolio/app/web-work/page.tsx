@@ -33,7 +33,7 @@ export default function WebWork(){
             )}
             <ul id="portfolio-brands" className="flex gap-5 flex-wrap">
                 {webDevworks.map((work, index) => 
-                    <li key={work.projectTitle} className="w-full md:w-[32%] relative shadow-xl rounded-3xl bg-white xl:w-[23.7%] group/item">
+                    <li key={work.projectTitle} className="w-full md:w-[31.4%] relative shadow-xl rounded-3xl bg-white xl:w-[23.7%] group/item">
                          <button onClick={() => openModal(index)} className="cursor-pointer transition-all group-hover/item:underline w-full h-full hover:text-white">
                         {/* <Link className="transition-all no-underline! hover:text-white group-hover/item:no-underline " href={work.projectUrl}> */}
                             

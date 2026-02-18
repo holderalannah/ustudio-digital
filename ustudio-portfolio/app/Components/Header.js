@@ -44,20 +44,28 @@ export default function Header(){
         e.preventDefault();
         if (open === false){
             setOpen(true)
-            console.log('open');
         } else {
             setOpen(false);
-            console.log('close')
         }
     }
 
     useEffect(() => {
-        if (open === true){
-            document.querySelector('body').classList.add('remove-overflow');
-        } else {
-
-            document.querySelector('body').classList.remove('remove-overflow')
+       function addBodyClass(){
+            if (open === true){
+                document.querySelector('body').classList.add('remove-overflow');
+            } else {
+                document.querySelector('body').classList.remove('remove-overflow')
+            }
         }
+        addBodyClass()
+
+        window.addEventListener('resize',()=>{
+            if (window.innerWidth > 1024){
+                setOpen(false);
+            }
+            addBodyClass();
+        });
+
     },[open]);
 
     return(
@@ -73,7 +81,7 @@ export default function Header(){
                     <span className={ `${menuBtn} duration-50! ${ open && 'opacity-0 -translate-5'}`}></span>
                     <span className={ `${menuBtn} ${ open && menuBtnOpen + ' -rotate-135'}`}></span>
                 </button>
-                <Nav obj={navLinks} addedNavClass={`transition-all duration-200 ease-in ${open ? 'fixed top-[85px] left-0 w-full h-full bg-white p-6 z-[200]' : 'hidden lg:block lg:static lg:bg-transparent lg:w-auto lg:h-auto'} lg:block`} addedClass={`${open ? 'flex flex-col lg:flex-row' : ''} justify-around gap-5 w-full lg:flex lg:gap-7 xl:gap-12 font-semibold`} />
+                <Nav obj={navLinks} addedNavClass={`transition-all duration-200 ease-in ${open ? 'fixed top-[85px] left-0 w-full h-full bg-white p-6 z-[200] lg:h-auto' : 'hidden lg:static lg:bg-transparent lg:w-auto lg:h-auto'} lg:flex`} addedClass={`${open ? 'flex flex-col lg:flex-row' : ''} justify-around gap-5 w-full lg:flex lg:gap-7 xl:gap-12 font-semibold`} navigate={() => setOpen(false)} />
             </div>
         </header>
     )

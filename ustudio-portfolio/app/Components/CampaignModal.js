@@ -17,8 +17,8 @@ export default function CampaignModal({data, isOpen, onClose, isWeb }){
        <Modal isOpen={isOpen} onClose={onClose} addedStyles={'h-[95vh] lg:h-[80vh]'}>
             <h2 className="font-extrabold text-2xl lg:text-3xl">{data.projectTitle}</h2>
 
-            <div className="flex w-full justify-between items-start flex-col overflow-auto h-[90%] lg:flex-row lg:h-[80%] lg:overflow-auto lg:justify-center lg:items-center">
-                <div className="w-full h-full [>div]:mb-0! lg:w-1/2 lg:overflow-auto">
+            <div className="flex w-full justify-between items-start flex-col overflow-auto h-[90%] md:h-[87%] lg:flex-row lg:h-[80%] lg:overflow-auto lg:justify-center lg:items-center lg:mb-7">
+                <div className="w-full h-[85%] lg:h-full lg:w-1/2 lg:overflow-auto">
                     <CampaignSection heading="U-Studio">
                         <p>Toronto, Ontario, <strong>Canada</strong></p>
                     </CampaignSection>
@@ -51,11 +51,11 @@ export default function CampaignModal({data, isOpen, onClose, isWeb }){
 
                 </div>
 
-                <div className="w-1/2 hidden justify-center lg:flex">
+                <div className="w-full hidden justify-center md:items-center md:flex md:flex-col lg:items-baseline lg:w-1/2 lg:flex-row lg:flex lg:overflow-hidden">
                     <div className="computerLayer relative">
-                        <Image src={ComputerLayer} alt="Computer" className="" />
-                        <div className="computerlayer__screen absolute overflow-hidden top-6 left-[62px] h-[211px]">
-                            <Image src={data.projectImg} alt={data.projectTitle} className='w-full max-w-[338px]' />   
+                        <Image src={ComputerLayer} alt="Computer" className="md:max-w-[320px] lg:max-w-[410px]" />
+                        <div className="computerlayer__screen absolute overflow-hidden md:top-4 md:h-[153px] md:left-10 lg:top-5 lg:left-[55px] lg:h-48">
+                            <Image src={data.projectImg} alt={data.projectTitle} className='w-full md:max-w-60 lg:max-w-[300px]' />   
                         </div>
                     </div>
                 </div>
