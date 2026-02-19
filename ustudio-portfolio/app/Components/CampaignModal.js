@@ -14,11 +14,11 @@ function CampaignSection({children, heading}){
 
 export default function CampaignModal({data, isOpen, onClose, isWeb }){
     return (
-       <Modal isOpen={isOpen} onClose={onClose} addedStyles={'h-[95vh] lg:h-[80vh]'}>
+       <Modal isOpen={isOpen} onClose={onClose} addedStyles={'overflow-auto h-[95vh] lg:h-[80vh]'}>
             <h2 className="font-extrabold text-2xl lg:text-3xl">{data.projectTitle}</h2>
 
-            <div className="flex w-full justify-between items-start flex-col overflow-auto h-[90%] md:h-[87%] lg:flex-row lg:h-[80%] lg:overflow-auto lg:justify-center lg:items-center lg:mb-7">
-                <div className="w-full h-[85%] lg:h-full lg:w-1/2 lg:overflow-auto">
+            <div className="flex w-full justify-between items-start flex-col h-[87%] flex-wrap overflow-auto overflow-x-hidden md:h-[87%] lg:flex-row lg:h-[80%] lg:overflow-auto lg:justify-center lg:items-center lg:mb-7">
+                <div className="w-full h-[60%] overflow-auto md:overflow-hidden md:h-[85%] lg:h-full lg:w-1/2 lg:overflow-auto">
                     <CampaignSection heading="U-Studio">
                         <p>Toronto, Ontario, <strong>Canada</strong></p>
                     </CampaignSection>
@@ -51,13 +51,21 @@ export default function CampaignModal({data, isOpen, onClose, isWeb }){
 
                 </div>
 
-                <div className="w-full hidden justify-center md:items-center md:flex md:flex-col lg:items-baseline lg:w-1/2 lg:flex-row lg:flex lg:overflow-hidden">
-                    <div className="computerLayer relative">
-                        <Image src={ComputerLayer} alt="Computer" className="md:max-w-[320px] lg:max-w-[410px]" />
-                        <div className="computerlayer__screen absolute overflow-hidden md:top-4 md:h-[153px] md:left-10 lg:top-5 lg:left-[55px] lg:h-48">
-                            <Image src={data.projectImg} alt={data.projectTitle} className='w-full md:max-w-60 lg:max-w-[300px]' />   
+                <div className="w-full justify-center items-center flex flex-col h-1/2 md:h-auto lg:items-baseline lg:w-1/2 lg:flex-row lg:flex lg:overflow-hidden">
+                    
+                        { isWeb ? 
+                        <div className="computerLayer relative mt-20 pb-8 md:mt-0 md:pb-0">
+                            <Image src={ComputerLayer} alt="Computer" className="max-w-[320px] md:max-w-[500px] lg:max-w-[410px]" />
+                                <div className="computerlayer__screen absolute overflow-hidden h-[149px] top-4 left-[43px] md:top-[26px] md:h-[229px] md:left-[66px] lg:top-5 lg:left-[55px] lg:h-48">
+                                    <Image src={data.projectImg} alt={data.projectTitle} className='w-full max-w-[234px]  md:max-w-[366px] lg:max-w-[300px]' />   
+                                </div>
                         </div>
-                    </div>
+                        : 
+                        <div className="phoneLayer relative">
+                            <p>Add Phone</p>
+                        </div>
+                        }
+                    
                 </div>
             </div>
 

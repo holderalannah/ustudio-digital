@@ -28,9 +28,9 @@ export default function EmailCampaigns() {
              {selectedItem !== null && (
                 <CampaignModal data={campaigns[selectedItem]} isOpen={isOpen} onClose={closeModal} isWeb={false} />
             )}
-            <ul id="portfolio-brands" className="flex gap-5 flex-wrap">
+            <ul id="portfolio-brands" className="flex justify-center gap-2 flex-wrap md:justify-between lg:gap-5 lg:justify-start">
                 {campaigns.map((work, index) => 
-                    <li key={work.projectTitle} className="w-[23%] max-w-[225px] relative shadow-xl rounded-3xl bg-white group/item mb-5">
+                    <li key={work.projectTitle} className="w-full relative shadow-xl rounded-3xl bg-white group/item mb-5 max-w-[225px] md:w-[31%] lg:w-[23%]">
                         <button onClick={() => openModal(index)} className="transition-all no-underline! hover:text-white group-hover/item:no-underline w-full cursor-pointer">
                             
                             <div className="transition-all w-full h-full absolute top-0 left-0 group-hover/item:bg-[rgba(22,20,158,0.65)] rounded-3xl z-10"></div>
