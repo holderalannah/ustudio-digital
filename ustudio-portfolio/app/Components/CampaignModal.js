@@ -1,24 +1,24 @@
 import Modal from "./Modal"
 import Link from "next/link"
 import Image from "next/image";
-import ComputerLayer from '../../public/images/computer-layer.png'
+import PhoneLayer from '../../public/images/phone-layer.png'
 
 function CampaignSection({children, heading}){
     return(
         <div className="mb-5">
             <h3 className="font-bold text-lg">{heading}</h3>
-            <p className="text-sm">{children}</p>
+            <p className="text-sm md:text-base">{children}</p>
         </div>
     )
 }
 
-export default function CampaignModal({data, isOpen, onClose, isWeb }){
+export default function CampaignModal({data, isOpen, onClose }){
     return (
-       <Modal isOpen={isOpen} onClose={onClose} addedStyles={'overflow-auto h-[95vh] lg:h-[80vh]'}>
+       <Modal isOpen={isOpen} onClose={onClose} addedStyles={'overflow-auto h-[95vh] md:overflow-hidden md:h-[865px] lg:h-[80vh]'}>
             <h2 className="font-extrabold text-2xl lg:text-3xl">{data.projectTitle}</h2>
 
-            <div className="flex w-full justify-between items-start flex-col h-[87%] flex-wrap overflow-auto overflow-x-hidden md:h-[87%] lg:flex-row lg:h-[80%] lg:overflow-auto lg:justify-center lg:items-center lg:mb-7">
-                <div className="w-full h-[60%] overflow-auto md:overflow-hidden md:h-[85%] lg:h-full lg:w-1/2 lg:overflow-auto">
+            <div className={`flex w-full justify-between items-start flex-col h-[87%] flex-wrap overflow-auto overflow-x-hidden md:h-[89%] lg:flex-row lg:h-[80%] lg:overflow-auto lg:justify-center lg:items-center lg:mb-7`}>
+                <div className="w-full h-[52%] overflow-auto md:pr-1.5 md:h-[65%] md:w-[47%] lg:pr-0 lg:h-full lg:w-1/2 lg:overflow-auto">
                     <CampaignSection heading="U-Studio">
                         <p>Toronto, Ontario, <strong>Canada</strong></p>
                     </CampaignSection>
@@ -51,20 +51,14 @@ export default function CampaignModal({data, isOpen, onClose, isWeb }){
 
                 </div>
 
-                <div className="w-full justify-center items-center flex flex-col h-1/2 md:h-auto lg:items-baseline lg:w-1/2 lg:flex-row lg:flex lg:overflow-hidden">
+                <div className="w-full justify-center items-center flex flex-col h-[47%] md:w-1/2 md:h-auto lg:items-baseline lg:w-1/2 lg:flex-row lg:flex lg:overflow-hidden">
                     
-                        { isWeb ? 
-                        <div className="computerLayer relative mt-20 pb-8 md:mt-0 md:pb-0">
-                            <Image src={ComputerLayer} alt="Computer" className="max-w-[320px] md:max-w-[500px] lg:max-w-[410px]" />
-                                <div className="computerlayer__screen absolute overflow-hidden h-[149px] top-4 left-[43px] md:top-[26px] md:h-[229px] md:left-[66px] lg:top-5 lg:left-[55px] lg:h-48">
-                                    <Image src={data.projectImg} alt={data.projectTitle} className='w-full max-w-[234px]  md:max-w-[366px] lg:max-w-[300px]' />   
+                        <div className="phoneLayer relative">
+                            <Image src={PhoneLayer} alt="mobile phone" className="relative z-10 max-w-[120px] md:max-w-[234px] lg:max-w-60" />
+                                <div className="phonelayer__screen absolute overflow-hidden h-[219px] top-[7px] left-2 md:h-[426px] md:left-4 md:top-[15px] lg:top-3.5 lg:left-4 lg:h-[440px]">
+                                    <Image src={data.projectImg} alt={data.projectTitle} className='w-[102px] max-w-[234px]  md:w-full md:max-w-[200px] lg:max-w-[204px]' />   
                                 </div>
                         </div>
-                        : 
-                        <div className="phoneLayer relative">
-                            <p>Add Phone</p>
-                        </div>
-                        }
                     
                 </div>
             </div>

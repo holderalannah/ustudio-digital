@@ -2,9 +2,8 @@
 
 import { useState } from 'react';
 import Innerpage from "../Components/Layout/Innerpage";
-import CampaignModal from '../Components/CampaignModal';
+import DigitalModal from '../Components/DigitalModal';
 import Image from "next/image";
-import Link from "next/link";
 import { webDevworks } from '../data/digital-data';
 
 import RightArrow from '../Components/Svgs/RightArrow'
@@ -29,7 +28,7 @@ export default function WebWork(){
         // rgba(13,131,198,0.65) rgba(7,74,118,0.65) rgb(110,165,68) rgb(22,20,158)
         <Innerpage title="Web Portfolio">
             {selectedItem !== null && (
-                <CampaignModal data={webDevworks[selectedItem]} isOpen={isOpen} onClose={closeModal} isWeb={true} />
+                <DigitalModal data={webDevworks[selectedItem]} isOpen={isOpen} onClose={closeModal} isWeb={true} />
             )}
             <ul id="portfolio-brands" className="flex gap-5 flex-wrap">
                 {webDevworks.map((work, index) => 
