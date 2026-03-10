@@ -170,6 +170,12 @@ body .swiper-pagination-bullet-active {
   justify-content: center;
 }
 
+/* Modal Video */
+.next-video-container {
+  margin: 0;
+}
+
+
 /* card styles */
 
 .card {

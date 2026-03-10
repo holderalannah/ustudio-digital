@@ -99,19 +99,12 @@ export default function Home() {
       </div>
 
       <Container>
-     
-
         <div ref={featRef}>
           <motion.div  style={{ opacity, y }}><FeatureCards sliderNumber={4} campaign={false} title="Latest Digital Web" cardInfo={digitalProjects} /></motion.div>
         </div>
       </Container>
-        <Brands />
 
-        <Container>
-        
-        {/* <Campaigns /> */}
-        
-      </Container>
+      <Brands />
 
       
     </div>
