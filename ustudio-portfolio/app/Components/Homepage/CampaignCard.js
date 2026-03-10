@@ -7,7 +7,7 @@ export default function CampaignCard({cardImg, cardUrl, cardProject, cardBrand})
             <Image src={cardImg} alt={cardProject} height={340} className='mb-5' />
                 <p className='text-sm uppercase font-bold text-[#545151]'>{cardBrand}</p>
                 <p className='text-lg font-semibold'>{cardProject}</p>
-            <Link href={cardUrl} target='_blank' className='text-sm hover:underline'>View</Link>
+                <p className='text-sm hover:underline'>View</p>
         </Link>
     )
 }

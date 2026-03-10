@@ -34,7 +34,10 @@ export default function Socials(){
                     <div className="w-full max-w-[1124px] flex gap-5 flex-wrap">
                         {socialsData.map((work,index) => {
                             return <PinCard key={index} small={ !(index * 3 % 2 === 0) && !(index + 8 % 3 === 0) } medium={index % 2 === 0} large={!(index % 2 === 0) && index % 3 === 0}>
-                                 <button onClick={() => openModal(index)} className="cursor-pointer transition-all group-hover/item:underline w-full h-full">
+                                 <a onClick={(e) => {
+                                    e.preventDefault();
+                                    openModal(index);
+                                 }} className="cursor-pointer transition-all group-hover/item:underline w-full h-full">
                                 <Image className='w-full h-full object-cover rounded-2xl shadow-2xl' src={work.projectImg} alt={work.projectTitle} />
                                   <div className="pt-5">
                                        {/* <button onClick={() => openModal(index)} className="cursor-pointer transition-all group-hover/item:underline">
@@ -43,7 +46,7 @@ export default function Socials(){
                                             </span>
                                         </button> */}
                                     </div>
-                                    </button>
+                                    </a>
                             </PinCard>
                         })}
                     </div>

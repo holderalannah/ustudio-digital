@@ -1,12 +1,16 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation'
 import Image from 'next/image';
 import Link from 'next/link';
 import SiteLogo from '../../public/ustudio-logo.png';
 import Nav from './Nav'
 
 export default function Header(){
+
+    const pathname = usePathname();
+    console.log(pathname)
 
     const navLinks = [
         {
@@ -39,6 +43,7 @@ export default function Header(){
     const menuBtnOpen = `absolute top-0 left-0 right-0 bottom-0 m-auto`;
 
     const [open, setOpen] = useState(false);
+    const [isHome, setIsHome] = useState(false);
 
     function OnMenuBtnClick(e){
         e.preventDefault();
@@ -50,6 +55,9 @@ export default function Header(){
     }
 
     useEffect(() => {
+        if (pathname === '/') {
+            setIsHome(true);
+        }
        function addBodyClass(){
             if (open === true){
                 document.querySelector('body').classList.add('remove-overflow');
@@ -66,10 +74,14 @@ export default function Header(){
             addBodyClass();
         });
 
-    },[open]);
+    },[open, isHome]);
+
+    const [scolling, isScrolling] = useState(false);
+
+    console.log(isHome)
 
     return(
-        <header id="header">
+        <header id="header" className='w-full lg:fixed lg:top-0 lg:z-80'>
             <div className='flex mx-auto w-[85%] max-w-6xl justify-between items-center relative lg:justify-between xl:max-w-7xl'>
                 <div id="logo" className='p-3.5'>
                     <Link href="/">
@@ -81,8 +93,9 @@ export default function Header(){
                     <span className={ `${menuBtn} duration-50! ${ open && 'opacity-0 -translate-5'}`}></span>
                     <span className={ `${menuBtn} ${ open && menuBtnOpen + ' -rotate-135'}`}></span>
                 </button>
-                <Nav obj={navLinks} addedNavClass={`transition-all duration-200 ease-in ${open ? 'fixed top-[85px] left-0 w-full h-full bg-white p-6 z-[200] lg:h-auto' : 'hidden lg:static lg:bg-transparent lg:w-auto lg:h-auto'} lg:flex`} addedClass={`${open ? 'flex flex-col lg:flex-row' : ''} justify-around gap-5 w-full lg:flex lg:gap-7 xl:gap-12 font-semibold`} navigate={() => setOpen(false)} />
+                <Nav obj={navLinks} addedNavClass={`transition-all duration-200 ease-in ${open ? 'fixed top-[85px] left-0 w-full h-full bg-white p-6 z-[200] lg:h-auto' : 'hidden lg:static lg:bg-transparent lg:w-auto lg:h-auto'} lg:flex`} addedClass={`${open ? 'flex flex-col lg:flex-row' : ''}  ${ isHome ? 'text-white' : 'text-black' } justify-around gap-5 w-full lg:flex lg:gap-7 xl:gap-12 font-semibold`} navigate={() => setOpen(false)} />
             </div>
         </header>
     )
 }
+/*scolling ? 'text-black' : 'text-white' */

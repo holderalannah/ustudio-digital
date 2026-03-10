@@ -56,7 +56,7 @@ export default function DigitalModal({data, isOpen, onClose, isWeb }){
                         <div className="computerLayer relative mt-20 pb-8 md:mt-0 md:pb-0">
                             <Image src={ComputerLayer} alt="Computer" className="max-w-[320px] md:max-w-[500px] lg:max-w-[410px]" />
                                 <div className="computerlayer__screen absolute overflow-hidden h-[149px] top-4 left-[43px] md:top-[26px] md:h-[229px] md:left-[66px] lg:top-5 lg:left-[55px] lg:h-48">
-                                    <Image src={data.projectImg} alt={data.projectTitle} className='w-full max-w-[234px]  md:max-w-[366px] lg:max-w-[300px]' />   
+                                    <Image src={data.projectImg} alt={data.projectTitle} className='w-full max-w-[234px]  md:max-w-[366px] lg:max-w-[300px] will-change-auto transition-transform delay-700 animate-scroll' />   
                                 </div>
                         </div>
                 </div>

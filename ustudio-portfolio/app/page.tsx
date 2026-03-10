@@ -1,9 +1,15 @@
+"use client";
+import { useRef } from 'react';
+import { motion, useScroll, useTransform, useSpring } from 'motion/react';
 import Image from "next/image";
 import Container from './Components/Container';
-import HeroImg from '../public/images/hero-image.png';
-import CenteredCallout from './Components/CenteredCallout';
+import Ipad from '../public/images/Ipad.png';
 import Brands from './Components/Homepage/Brands';
 import FeatureCards from './Components/Homepage/FeatureCards';
+import Campaigns from './Components/Homepage/Campaigns';
+
+import BackgroundVideo from 'next-video/background-video';
+import DoveOOH from '/videos/Dove-OOH.mp4';
 
 import DoveCompImg from '../public/images/digital/dove-compliment.jpg';
 import DoveCrumblImg from '../public/images/digital/dove-x-crumble.jpg';
@@ -11,14 +17,10 @@ import DoveHolidayImg from '../public/images/digital/dove-holiday.jpg';
 import KnorrFlavImg from '../public/images/digital/knorr-flavourmania.jpg';
 import KnorrPastesImg from '../public/images/digital/knorr-pastes.jpg';
 
-import AxeCamp from '../public/images/campaigns/campaign-axe-golden-ticket.png';
-import TresemmeOfferCamp from '../public/images/campaigns/campaign-tresemme-offer.png';
-import DoveWalmartCamp from '../public/images/campaigns/campaign-dove-walmart-offer.png';
-import DMCEaCamp from '../public/images/campaigns/campaign-dmc-ea.png';
 
 export default function Home() {
 
-    const digitalProjects = [
+  const digitalProjects = [
          {
             cardBrand: "Dove",
             cardImg: DoveCrumblImg,
@@ -51,54 +53,67 @@ export default function Home() {
         },
     ];
 
-    const campaigns = [
-      {
-          cardBrand: "Dove Men+Care",
-          cardImg: DMCEaCamp,
-          cardProject: "DMC x EA Sports Contest 2025",
-          cardUrl: "https://unileverpromos-ca.wyng.com/dovemenplaysfc/preview"
+  const ipadDiv = useRef(null);
+  const featRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: featRef,
+    offset: ['start end', 'center center'],
+  });
+
+  const rawOpacity = useTransform(scrollYProgress, [0, 0.15, 0.8], [0, 0.65, 1]);
+  const rawY = useTransform(scrollYProgress, [0, 0.8], [30, 0]); // 30px down -> 0
+
+  const opacity = useSpring(rawOpacity, { stiffness: 100, damping: 20 });
+  const y = useSpring(rawY, { stiffness: 120, damping: 24 });
+
+  const variants = {
+    hidden: {opacity: 0},
+    show: (i: number) => ({
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: i * 0.45,
       },
-      {
-          cardBrand: "Axe",
-          cardImg: AxeCamp,
-          cardProject: "Axe Golden Ticket 2025",
-          cardUrl: "https://www.unileverpromos.ca/axegoldenticket/preview"
-      },
-          {
-          cardBrand: "TRESemmé",
-          cardImg: TresemmeOfferCamp,
-          cardProject: "TRESemmé X Conair 2025",
-          cardUrl: "https://unileverpromos-ca.wyng.com/tresemmeoffer/preview"
-      },
-          {
-          cardBrand: "Dove",
-          cardImg: DoveWalmartCamp,
-          cardProject: "Dove X Walmart 2025",
-          cardUrl: "https://unileverpromos-ca.wyng.com/doveoffer/preview"
-      },
-    
-    ]
+      
+    }),
+  }
+
+  const space = '\u00A0';
+  const headLine = `Hello from your in house agency`;
 
   return (
-    <div id="home-page" className="mt-5">
+    <div id="home-page" className="">
+
+      <div className='flex justify-center items-center w-full relative overflow-hidden h-screen lg:min-h-[630px]'>
+        <div className='bg-darkPurple/75 h-screen w-full absolute top-0 left-0 z-5'></div>
+        <BackgroundVideo src={DoveOOH}>
+          <motion.h1 initial="hidden" variants={variants} whileInView="show" className="relative text-white font-normal text-5xl mx-auto text-center leading-[0.85] tracking-[-2px] z-10 md:text-6xl lg:text-8xl lg:tracking-[-3.4px] lg:max-w-[638px]">
+          {headLine.split(' ').map((word, i) => 
+          <motion.span key={`${word}-${i}`} variants={variants} custom={i}>
+            {`${word} `}
+            </motion.span>
+          )}
+          </motion.h1>
+        </BackgroundVideo>
+      </div>
+
       <Container>
-        <h1 className="font-normal text-5xl mx-auto text-center leading-[0.85] tracking-[-2px] md:text-6xl lg:text-8xl lg:max-w-[931px] lg:tracking-[-3.4px]">Hello from your in house&nbsp;agency</h1>
+     
 
-        <div className="hero-img-container mt-5 lg:mt-16 lg:mb-20">
-          <Image className="max-w-[1110px] mx-auto w-full " src={HeroImg}  alt="Hero Image" />
+        <div ref={featRef}>
+          <motion.div  style={{ opacity, y }}><FeatureCards sliderNumber={4} campaign={false} title="Latest Digital Web" cardInfo={digitalProjects} /></motion.div>
         </div>
-
-        <FeatureCards sliderNumber={4} campaign={false} title="Latest Digital Web" cardInfo={digitalProjects} />
-
+      </Container>
         <Brands />
 
-        <div className="pb-10">
-          <FeatureCards sliderNumber={4} campaign={true} title="Preview Our Campaigns" cardInfo={campaigns} />
-        </div>
+        <Container>
+        
+        {/* <Campaigns /> */}
         
       </Container>
 
-      <CenteredCallout />
+      
     </div>
   );
 }
