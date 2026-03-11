@@ -1,7 +1,7 @@
 'use client';
 import { useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'motion/react';
-import FeatureCards from "./FeatureCards";
+import FeatureCards from "./FeatureWork";
 
 import AxeCamp from '../../../public/images/campaigns/campaign-axe-golden-ticket.png';
 import TresemmeOfferCamp from '../../../public/images/campaigns/campaign-tresemme-offer.png';

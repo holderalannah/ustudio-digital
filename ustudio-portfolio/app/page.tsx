@@ -5,7 +5,7 @@ import Image from "next/image";
 import Container from './Components/Container';
 import Ipad from '../public/images/Ipad.png';
 import Brands from './Components/Homepage/Brands';
-import FeatureCards from './Components/Homepage/FeatureCards';
+import FeatureCards from './Components/Homepage/FeatureWork';
 import Campaigns from './Components/Homepage/Campaigns';
 
 import BackgroundVideo from 'next-video/background-video';

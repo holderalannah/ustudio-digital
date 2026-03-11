@@ -12,7 +12,7 @@ import 'swiper/css/pagination';
 import WebCard from './WebCard';
 import CampaignCard from './CampaignCard'
 
-export default function FeatureCards({title, cardInfo, campaign, sliderNumber }){
+export default function FeatureWork({title, cardInfo, campaign, sliderNumber }){
 
     const swiperBreakpoints = {
         320: {
