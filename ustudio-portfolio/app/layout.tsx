@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import ThemeProvider from './theme-provider'
 import Innerpage from './Components/Layout/Innerpage';
-import Header from './Components/Header';
-import Footer from './Components/Footer';
+import Header from './Components/Layout/Header';
+import Footer from './Components/Layout/Footer';
 import localFont from 'next/font/local';
 import "./globals.css";
 
@@ -62,15 +63,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+       <ThemeProvider>
       <body
-        className={`${sofiaPro} antialiased`}
+        className={`${sofiaPro} antialiased bg-white dark:bg-darkUnilever`}
       >
-        <Header/>
+       
+          <Header/>
           <main id="content">
             {children}
           </main>
-        <Footer />
+          <Footer />
+       
       </body>
+       </ThemeProvider>
     </html>
   );
 }

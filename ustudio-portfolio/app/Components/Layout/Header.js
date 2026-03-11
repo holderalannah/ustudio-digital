@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation'
 import Image from 'next/image';
 import Link from 'next/link';
-import SiteLogo from '../../public/ustudio-logo.png';
+import SiteLogo from '../../../public/ustudio-logo.png';
 import Nav from './Nav'
 
 export default function Header(){
@@ -19,7 +19,7 @@ export default function Header(){
         },
         {
             linkName : "Web Work",
-            linkUrl: "web-work"
+            linkUrl: "work"
         },
         {
             linkName : "Wyng Campaigns",

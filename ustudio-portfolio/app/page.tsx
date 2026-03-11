@@ -11,44 +11,65 @@ import Campaigns from './Components/Homepage/Campaigns';
 import BackgroundVideo from 'next-video/background-video';
 import DoveOOH from '/videos/Dove-OOH.mp4';
 
-import DoveCompImg from '../public/images/digital/dove-compliment.jpg';
-import DoveCrumblImg from '../public/images/digital/dove-x-crumble.jpg';
-import DoveHolidayImg from '../public/images/digital/dove-holiday.jpg';
-import KnorrFlavImg from '../public/images/digital/knorr-flavourmania.jpg';
-import KnorrPastesImg from '../public/images/digital/knorr-pastes.jpg';
+import AxeFFImg from '../public/images/homepage/axe-fine-fragrances.jpg';
+import DoveBridgertonImg from '../public/images/homepage/dove-bridgerton.jpg';
+import DoveCrumblImg from '../public/images/homepage/dove-crumbl.jpg';
+import DoveWhy2kImg from '../public/images/homepage/dove-why2k.jpg';
+import KnorrFlavImg from '../public/images/homepage/knorr-flavourmania.jpg';
+import DegreeBWImg from '../public/images/homepage/degree-body-wash.jpg';
+import DegreeWBImg from '../public/images/homepage/degree-whole-body.jpg';
+import HellmannBBBImg from '../public/images/homepage/hellmanns-bigburgerbattle.jpg';
 
 
 export default function Home() {
 
   const digitalProjects = [
+        {
+            cardBrand: "Dove",
+            cardImg: DoveBridgertonImg,
+            cardProject: "Dove X Bridgerton",
+            cardUrl: "/"
+        },
          {
             cardBrand: "Dove",
             cardImg: DoveCrumblImg,
-            cardProject: "Dove X Crumb",
+            cardProject: "Dove X Crumbl",
             cardUrl: "/"
         },
-        {
-            cardBrand: "Dove",
-            cardImg: DoveHolidayImg,
-            cardProject: "Holiday Limited Edition",
-            cardUrl: "/"
-        },
-        {
-            cardBrand: "Dove",
-            cardImg: DoveCompImg,
-            cardProject: "Change the Compliment",
-            cardUrl: "/"
-        },
-        {
+         {
             cardBrand: "Knorr",
             cardImg: KnorrFlavImg,
             cardProject: "Flavourmaina",
             cardUrl: "/"
         },
+            {
+            cardBrand: "Axe",
+            cardImg: AxeFFImg,
+            cardProject: "Axe Fine Fragrances",
+            cardUrl: "/"
+        },
+         {
+            cardBrand: "Degree",
+            cardImg: DegreeBWImg,
+            cardProject: "Degree Body Wash",
+            cardUrl: "/"
+        },
         {
-            cardBrand: "Knorr",
-            cardImg: KnorrPastesImg,
-            cardProject: "Premium Flavour Base Pastes",
+            cardBrand: "Dove",
+            cardImg: DoveWhy2kImg,
+            cardProject: "Dove Why2k",
+            cardUrl: "/"
+        },
+          {
+            cardBrand: "Degree",
+            cardImg: DegreeWBImg,
+            cardProject: "Degree Whole Body",
+            cardUrl: "/"
+        },
+        {
+            cardBrand: "Hellmann's",
+            cardImg: HellmannBBBImg,
+            cardProject: "Hellmann's Big Burger Battle",
             cardUrl: "/"
         },
     ];
@@ -86,7 +107,7 @@ export default function Home() {
     <div id="home-page" className="">
 
       <div className='flex justify-center items-center w-full relative overflow-hidden h-screen lg:min-h-[630px]'>
-        <div className='bg-darkPurple/75 h-screen w-full absolute top-0 left-0 z-5'></div>
+        <div className='bg-darkPurple/75 dark:bg-darkUnilever/75 h-screen w-full absolute top-0 left-0 z-5'></div>
         <BackgroundVideo src={DoveOOH}>
           <motion.h1 initial="hidden" variants={variants} whileInView="show" className="relative text-white font-normal text-5xl mx-auto text-center leading-[0.85] tracking-[-2px] z-10 md:text-6xl lg:text-8xl lg:tracking-[-3.4px] lg:max-w-[638px]">
           {headLine.split(' ').map((word, i) => 
@@ -98,11 +119,9 @@ export default function Home() {
         </BackgroundVideo>
       </div>
 
-      <Container>
         <div ref={featRef}>
           <motion.div  style={{ opacity, y }}><FeatureCards sliderNumber={4} campaign={false} title="Latest Digital Web" cardInfo={digitalProjects} /></motion.div>
         </div>
-      </Container>
 
       <Brands />
 

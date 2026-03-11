@@ -1,9 +1,9 @@
 "use client"
 
+import Image from 'next/image';
 import { SwiperSlide, Swiper } from 'swiper/react';
 import { Navigation, Pagination, A11y } from 'swiper/modules';
 import RightArrow from '../Svgs/RightArrow';
-import Container from '../Container';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -15,36 +15,37 @@ import CampaignCard from './CampaignCard'
 export default function FeatureCards({title, cardInfo, campaign, sliderNumber }){
 
     const swiperBreakpoints = {
+        // when window width is >= 320px
         320: {
             slidesPerView: 2,
-            spaceBetween: 0,
+            spaceBetween: 10,
         },
+        // when window width is >= 768px
         768: {
             slidesPerView: 2,
-            spaceBetween: 0,
+            spaceBetween: 30,
         },
+        // when window width is >= 1024px
         1024: {
             slidesPerView: sliderNumber,
-            spaceBetween: 0,
+            spaceBetween: 50,
         },
     };
 
   
     return(
         <section className='my-10 lg:my-10'>
-            <Container>
-                <h2 className='leading-[1.45] flex flex-col font-medium justify-center text-[36px] text-black text-left mb-0 tracking-[-0.18px]'>{title}</h2>
-            </Container>
+             <h2 className='leading-[1.45] flex flex-col font-medium justify-center text-[36px] text-black text-left mb-0 tracking-[-0.18px]'>{title}</h2>
             <Swiper className='swiper-feature-slider pt-14!'
                 modules={[ Navigation, Pagination, A11y ]}
-                spaceBetween={0}
+                spaceBetween={50}
                 navigation={{ 
                     enabled: true, 
                     nextEl: '.custom-next',
                     prevEl: '.custom-prev' }}
                 pagination={{ clickable: true }}
                 keyboard={{
-                    enabled: true,
+                enabled: true,
                 }}
                 slidesPerView={sliderNumber}
                 breakpoints={swiperBreakpoints}
@@ -65,9 +66,15 @@ export default function FeatureCards({title, cardInfo, campaign, sliderNumber })
                 {cardInfo.map((card) =>{
                     return(
                         <SwiperSlide>
-                          <WebCard key={card.cardProject}
-                                cardImg={card.cardImg} cardUrl={card.cardUrl} cardProject={card.cardProject} cardBrand={card.cardBrand}
+                            {campaign ?
+
+                                <CampaignCard key={card.cardProject}
+                                    cardImg={card.cardImg} cardUrl={card.cardUrl} cardProject={card.cardProject} cardBrand={card.cardBrand}
                                 />
+                                : <WebCard key={card.cardProject}
+                                    cardImg={card.cardImg} cardUrl={card.cardUrl} cardProject={card.cardProject} cardBrand={card.cardBrand}
+                                />}
+                 
                         </SwiperSlide>
                     )
                 })}

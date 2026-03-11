@@ -52,7 +52,7 @@ export default function CenteredCallout(){
     const year = thisyear.getFullYear();
 
     return(
-        <div ref={ref} className="bg-darkPurple pt-16 text-white text-center w-full lg:pt-28 relative overflow-hidden">
+        <div ref={ref} className="bg-darkPurple dark:bg-darkUnilever/75 pt-16 text-white text-center w-full lg:pt-28 relative overflow-hidden">
             <motion.div style={{ filter, transfrom }}>
                 <Image src={UstudioDovePromo} alt="ustudio fove hair promotion" className='object-cover opacity-20 absolute z-10 top-0 left-0 right-0 bottom-0 m-auto' />
             </motion.div>
@@ -76,7 +76,7 @@ export default function CenteredCallout(){
                 <Cta text="Learn More" url="/about-us" />
             </motion.div>
          </div>
-          <div className='bg-darkPurple/75 py-5 flex justify-center items-center relative z-20'>
+          <div className='bg-darkPurple/75 dark:bg-black/10 py-5 flex justify-center items-center relative z-20'>
                 <p className="text-center text-white">&copy; {year} U-Studio Digital. All rights reserved.</p>
             </div>
         </div>
