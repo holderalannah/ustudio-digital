@@ -33,7 +33,7 @@ export default function FeatureWork({title, cardInfo, campaign, sliderNumber }){
     return(
         <section className='my-10 lg:my-10'>
             <Container>
-                <h2 className='leading-[1.45] flex flex-col font-medium justify-center text-[36px] text-black text-left mb-0 tracking-[-0.18px]'>{title}</h2>
+                <h2 className='leading-[1.45] flex flex-col font-medium justify-center text-[36px] text-black text-center mb-0 tracking-[-0.18px]'>{title}</h2>
             </Container>
             <Swiper className='swiper-feature-slider pt-14!'
                 modules={[ Navigation, Pagination, A11y ]}

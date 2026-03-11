@@ -12,7 +12,7 @@ import SheaMoistureLogo from '../../../public/images/logos/sheaMoisture-logo.png
 import TresemmeLogo from '../../../public/images/logos/tresemme-logo.png';
 import VaselineLogo from '../../../public/images/logos/vaseline-logo.png';
 
-export default function Brands(){
+export default function Brands() {
 
     const brandList = [
         {
@@ -35,7 +35,7 @@ export default function Brands(){
             brandImg: DMCLogo,
             brandUrl: "https://www.dove.com/ca/en/men-care.html",
         },
-         {
+        {
             brandName: "Hellmanns",
             brandImg: HellmannsLogo,
             brandUrl: "https://www.hellmanns.com/ca/en/home.html",
@@ -55,7 +55,7 @@ export default function Brands(){
             brandImg: TresemmeLogo,
             brandUrl: "https://www.tresemme.com/ca/en/home.html",
         },
-         {
+        {
             brandName: "Vaseline",
             brandImg: VaselineLogo,
             brandUrl: "https://www.vaseline.com/ca/en/home.html",
@@ -69,15 +69,19 @@ export default function Brands(){
         offset: ['center end', 'end center'],
     });
 
-    const translateY = useTransform(scrollYProgress, [0, 0.5], [60, 0]);
-	const opacity = useTransform(scrollYProgress, [0, 0.5, 0.95], [0, 0.65, 1]);
+    const translateY = useTransform(scrollYProgress, [0, 0.25], [60, 0]);
+    const opacity = useTransform(scrollYProgress, [0, 0.25, 0.55], [0, 0.65, 1]);
 
-    return(
+    return (
         <div ref={brandRef} className='py-5 overflow-hidden md:py-10 lg:pb-20 lg:pt-16'>
-            <h2 className='leading-[1.45] flex flex-col font-medium justify-center text-[36px] text-black text-center tracking-[-0.18px]'>Brands We Work With</h2>
-            <div className='size-full mt-7 md:mt-[3.4rem'>
-                <BrandCard data={brandList} />
-            </div>
+            <motion.div style={{ opacity, translateY }}>
+                <h2 className='leading-[1.45] flex flex-col font-medium justify-center text-[36px] text-black text-center tracking-[-0.18px]'>Brands We Work With</h2>
+                <div className='size-full mt-7 md:mt-[3.4rem]' >
+                    <div style={{ ['--marquee-duration']: '28s', ['--marquee-gap']: '1rem' }}>
+                        <BrandCard data={brandList} />
+                    </div>
+                </div>
+            </motion.div>
         </div>
     )
 }

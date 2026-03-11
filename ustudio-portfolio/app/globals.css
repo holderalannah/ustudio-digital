@@ -51,6 +51,35 @@ body.remove-overflow {
   margin-bottom: 20px;
 }
 
+/* marquee setup */
+.brand-card-list {
+  display: inline-flex;         /* items laid out horizontally */
+  gap: var(--marquee-gap, 1rem);
+  align-items: center;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee var(--marquee-duration, 30s) linear infinite;
+}
+
+/* each item should be inline-block so width is respected */
+.marquee__item {
+  display: inline-block;
+  flex: 0 0 auto;
+}
+
+/* pause on hover / focus for usability */
+.brand-card-list:hover,
+.brand-card-list:focus-within {
+  animation-play-state: paused;
+}
+
+/* respects user's reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .brand-card-list {
+    animation: none;
+  }
+}
+
 @theme inline {
   --color-darkPink: #d01a71;
   --color-darkPurple: #8A2261;
@@ -79,6 +108,13 @@ body.remove-overflow {
     100% {
       transform: translate(0%, 0%);
     }
+  }
+
+  --animate-marquee: marquee 30s linear infinite;
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
   }
 }
 
