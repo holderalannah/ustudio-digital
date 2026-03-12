@@ -230,8 +230,14 @@ body .swiper-pagination-bullet-active {
 /* Modal Video */
 .next-video-container {
   margin: 0;
+  height: 100vh;
 }
 
+@media screen and (min-width: 1024px) {
+  .next-video-container {
+    min-height: 630px;
+  }
+}
 
 /* card styles */
 

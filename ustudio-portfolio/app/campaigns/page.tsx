@@ -1,12 +1,10 @@
 'use client'
 
+import { useState } from "react";
 import Innerpage from "../Components/Layout/Innerpage";
-import Image from "next/image";
 import CampaignModal from '../Components/CampaignModal';
 import { campaigns } from '../data/campaign-data';
-import { useState } from "react";
-
-import RightArrow from '../Components/Svgs/RightArrow'
+import PortfolioComponent from "../Components/PortfolioComponent";
 
 export default function EmailCampaigns() {
 
@@ -28,7 +26,14 @@ export default function EmailCampaigns() {
              {selectedItem !== null && (
                 <CampaignModal data={campaigns[selectedItem]} isOpen={isOpen} onClose={closeModal} />
             )}
-            <ul id="portfolio-brands" className="flex justify-center gap-2 flex-wrap md:justify-between lg:gap-5 lg:justify-center xl:justify-start">
+            <div>
+                <PortfolioComponent
+                    itemsPerPage={8}
+                    portfolioType={campaigns}
+                    onItemClick={openModal}
+                />
+                </div>
+            {/* <ul id="portfolio-brands" className="flex justify-center gap-2 flex-wrap md:justify-between lg:gap-5 lg:justify-center xl:justify-start">
                 {campaigns.map((work, index) => 
                     <li key={work.projectTitle} className="w-full relative shadow-xl rounded-3xl bg-white group/item mb-5 max-w-[225px] md:w-[31%] lg:w-[23%]">
                         <button onClick={() => openModal(index)} className="transition-all no-underline! hover:text-white group-hover/item:no-underline w-full cursor-pointer">
@@ -56,7 +61,7 @@ export default function EmailCampaigns() {
                         </button>
                     </li>
                 )}
-            </ul>
+            </ul> */}
         </Innerpage>
     )
 }

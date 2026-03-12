@@ -1,12 +1,10 @@
 "use client";
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'motion/react';
-import Image from "next/image";
-import Container from './Components/Container';
-import Ipad from '../public/images/Ipad.png';
+import { useInView } from 'react-intersection-observer';
+
 import Brands from './Components/Homepage/Brands';
 import FeatureCards from './Components/Homepage/FeatureWork';
-import Campaigns from './Components/Homepage/Campaigns';
 
 import BackgroundVideo from 'next-video/background-video';
 import DoveOOH from '/videos/Dove-OOH.mp4';
@@ -74,8 +72,18 @@ export default function Home() {
         },
     ];
 
-  const ipadDiv = useRef(null);
+  // const heroRef = useRef(null);
   const featRef = useRef(null);
+
+  const { ref: heroRef, inView } = useInView({
+    threshold: 0.09,
+    rootMargin: '0px'
+  })
+
+  useEffect(() => {
+    if (typeof window === 'undefined' ) return;
+    window.dispatchEvent(new CustomEvent('heroScrolled', { detail: {past : !inView}}));
+  }, [inView]);
 
   const { scrollYProgress } = useScroll({
     target: featRef,
@@ -106,7 +114,7 @@ export default function Home() {
   return (
     <div id="home-page" className="">
 
-      <div className='flex justify-center items-center w-full relative overflow-hidden h-screen lg:min-h-[630px]'>
+      <div ref={heroRef} className='flex justify-center items-center w-full relative overflow-hidden h-screen lg:min-h-[630px]'>
         <div className='bg-darkPurple/75 dark:bg-darkUnilever/75 h-screen w-full absolute top-0 left-0 z-5'></div>
         <BackgroundVideo src={DoveOOH}>
           <motion.h1 initial="hidden" variants={variants} whileInView="show" className="relative text-white font-normal text-5xl mx-auto text-center leading-[0.85] tracking-[-2px] z-10 md:text-6xl lg:text-8xl lg:tracking-[-3.4px] lg:max-w-[638px]">

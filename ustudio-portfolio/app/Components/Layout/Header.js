@@ -11,6 +11,11 @@ import Nav from './Nav';
 export default function Header() {
   const pathname = usePathname() ?? '/';
 
+  const [ open, setOpen ] = useState(false);
+  const [ isHome, setIsHome ] = useState( pathname === '/' );
+  const [ scrolledPastHero, setScrolledPastHero ] = useState( pathname!== '/' );
+
+
   const navLinks = [
     { linkName: 'About Us', linkUrl: 'about-us' },
     { linkName: 'Web Work', linkUrl: 'work' },
@@ -23,8 +28,7 @@ export default function Header() {
   const menuBtn = 'block bg-white h-0.5 w-5 rounded transition duration-200 ease-in-out';
   const menuBtnCenter = 'absolute inset-0 m-auto';
 
-  const [open, setOpen] = useState(false);
-  const [isHome, setIsHome] = useState(pathname === '/');
+
 
   // update isHome when the route changes
   useEffect(() => {
@@ -33,6 +37,15 @@ export default function Header() {
 
   // manage body class for menu overflow and add/remove resize listener
   useEffect(() => {
+    if ( typeof window === 'undefined' ) return;
+
+    const handler = (e) => {
+      const past = !!(e && e.detail && e.detail.past);
+      setScrolledPastHero(past);
+    }
+
+    window.addEventListener('heroScrolled', handler);
+
     const body = typeof document !== 'undefined' ? document.body : null;
 
     if (body) {
@@ -51,6 +64,8 @@ export default function Header() {
       window.removeEventListener('resize', handleResize);
       if (body) body.classList.remove('remove-overflow');
     };
+
+    return()=> window.removeEventListener('heroScrolled', handler);
   }, [open]);
 
   const toggleMenu = (e) => {
@@ -58,12 +73,26 @@ export default function Header() {
     setOpen((prev) => !prev);
   };
 
+  const checkLogoState = () => {
+    if ( isHome && !scrolledPastHero){
+      return WhiteLogo
+    } else if ( isHome && scrolledPastHero ) {
+      return SiteLogo
+    } else if ( !isHome) {
+      return SiteLogo
+    }
+  }
+
   return (
-    <header id="header" className={`${isHome ? 'bg-transparent' : 'bg-white'} w-full lg:fixed lg:top-0 lg:z-80`}>
+    <header id="header" className={`
+      ${isHome ? 'bg-transparent' : 'bg-white'} 
+      ${scrolledPastHero ? 'bg-white!' : 'bg-transparent'} 
+      w-full lg:fixed lg:top-0 lg:z-80`
+    }>
       <div className="flex mx-auto w-[85%] max-w-6xl justify-between items-center relative lg:justify-between xl:max-w-7xl">
         <div id="logo" className="p-3.5">
           <Link href="/">
-            <Image className="max-w-[220px]" src={isHome ? WhiteLogo : SiteLogo} alt="U-Studio Logo" />
+            <Image className="max-w-[220px] transition-all" src={checkLogoState()} alt="U-Studio Logo" />
           </Link>
         </div>
 
@@ -80,7 +109,7 @@ export default function Header() {
         <Nav
           obj={navLinks}
           addedNavClass={`transition-all duration-200 ease-in ${open ? 'fixed top-[85px] left-0 w-full h-full bg-white p-6 z-[200] lg:h-auto' : 'hidden lg:static lg:bg-transparent lg:w-auto lg:h-auto'} lg:flex`}
-          addedClass={`${open ? 'flex flex-col lg:flex-row' : ''} ${isHome ? 'text-white' : 'text-black'} justify-around gap-5 w-full lg:flex lg:gap-7 xl:gap-12 font-semibold`}
+          addedClass={`${open ? 'flex flex-col lg:flex-row' : ''} ${isHome ? 'text-white' : 'text-black'} ${scrolledPastHero ? 'text-black!' : 'text-white'} justify-around gap-5 w-full lg:flex lg:gap-7 xl:gap-12 font-semibold`}
           navigate={() => setOpen(false)}
         />
       </div>
