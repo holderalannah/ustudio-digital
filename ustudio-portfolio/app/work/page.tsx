@@ -1,14 +1,25 @@
 'use client'
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Innerpage from "../Components/Layout/Innerpage";
 import DigitalModal from '../Components/DigitalModal';
-import { webDevworks } from '../data/digital-data';
 import PortfolioComponent from '../Components/PortfolioComponent';
+import { webDevworks } from '../data/digital-data';
+import { aiSolutions } from '../data/ai-data';
+import { campaigns } from '../data/campaign-data';
+import { socialsData } from '../data/social-data';
+
+type WebDevItem = typeof webDevworks[number];
+type AiItem = typeof aiSolutions[number];
+type CampaignItem = typeof campaigns[number];
+type SocialItem = typeof socialsData[number];
+
+type WorkItem = WebDevItem | AiItem | CampaignItem | SocialItem;
 
 export default function WebWork() {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState<number | null>(null);
+  const [portfolioWork, setPortfolioWork] = useState<WorkItem[]>([]);
 
   const openModal = (index: number) => {
     setSelectedItem(index);
@@ -20,8 +31,28 @@ export default function WebWork() {
     setSelectedItem(null);
   };
 
+  const allData: WorkItem[] = [...aiSolutions, ...campaigns, ...socialsData, ...webDevworks];
+
+  const workResult = allData.filter((data) => (data as any).projectType !== undefined);
+
+
+  const portfolioWorkTypes = [
+    'web dev', 'wyng campaigns', 'socials', 'ai solutions'
+  ];
+
+  const getResults = (selectedType: string) => {
+    const filteredResults = workResult.filter((data) => (data as any).projectType === selectedType);
+    setPortfolioWork(filteredResults);
+  };
+console.log(portfolioWork);
+
+  if (portfolioWork.length === 0 ) { setPortfolioWork(webDevworks)}
+
+  useEffect(() => {
+    },[portfolioWork])
+
   return (
-    <Innerpage title="Web Portfolio">
+    <Innerpage title="Our Work">
       {selectedItem !== null && (
         <DigitalModal
           data={webDevworks[selectedItem]}
@@ -31,13 +62,31 @@ export default function WebWork() {
         />
       )}
 
-      <div>
+      <div className='flex justify-center'>
+        {portfolioWorkTypes.map((workType, i) => (
+          <button className='btn py-2 px-5 rounded-lg border-unilever text-darkUnilever font-extrabold capitalize cursor-pointer' key={`brand-${i}`} onClick={() => getResults(workType)}>
+            {workType}
+          </button>
+        ))}
+      </div>
+
+      {portfolioWork.length > 0 && (
+        <div className='mt-7 lg:mt-12'>
+          <PortfolioComponent
+            itemsPerPage={8}
+            portfolioType={portfolioWork}
+            onItemClick={openModal}
+          />
+        </div>
+      )}
+
+      {/* <div>
         <PortfolioComponent
           itemsPerPage={8}
           portfolioType={webDevworks}
           onItemClick={openModal}
         />
-      </div>
+      </div> */}
     </Innerpage>
   );
 }

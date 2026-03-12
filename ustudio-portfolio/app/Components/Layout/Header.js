@@ -18,10 +18,10 @@ export default function Header() {
 
   const navLinks = [
     { linkName: 'About Us', linkUrl: 'about-us' },
-    { linkName: 'Web Work', linkUrl: 'work' },
-    { linkName: 'Wyng Campaigns', linkUrl: 'campaigns' },
-    { linkName: 'Socials', linkUrl: 'socials' },
-    { linkName: 'AI Solutions', linkUrl: 'ai-solutions' },
+    { linkName: 'Work', linkUrl: 'work' },
+    // { linkName: 'Wyng Campaigns', linkUrl: 'campaigns' },
+    // { linkName: 'Socials', linkUrl: 'socials' },
+    // { linkName: 'AI Solutions', linkUrl: 'ai-solutions' },
     { linkName: 'Brands', linkUrl: 'brand' },
   ];
 
@@ -109,7 +109,7 @@ export default function Header() {
         <Nav
           obj={navLinks}
           addedNavClass={`transition-all duration-200 ease-in ${open ? 'fixed top-[85px] left-0 w-full h-full bg-white p-6 z-[200] lg:h-auto' : 'hidden lg:static lg:bg-transparent lg:w-auto lg:h-auto'} lg:flex`}
-          addedClass={`${open ? 'flex flex-col lg:flex-row' : ''} ${isHome ? 'text-white' : 'text-black'} ${scrolledPastHero ? 'text-black!' : 'text-white'} justify-around gap-5 w-full lg:flex lg:gap-7 xl:gap-12 font-semibold`}
+          addedClass={`${open ? 'flex flex-col lg:flex-row' : ''} ${isHome ? 'text-white' : 'text-black!'} ${scrolledPastHero && isHome ? 'text-black!' : 'text-white'} justify-around gap-5 w-full lg:flex lg:gap-7 xl:gap-12 font-semibold`}
           navigate={() => setOpen(false)}
         />
       </div>
