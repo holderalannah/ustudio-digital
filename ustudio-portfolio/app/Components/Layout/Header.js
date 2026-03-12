@@ -19,10 +19,7 @@ export default function Header() {
   const navLinks = [
     { linkName: 'About Us', linkUrl: 'about-us' },
     { linkName: 'Work', linkUrl: 'work' },
-    // { linkName: 'Wyng Campaigns', linkUrl: 'campaigns' },
-    // { linkName: 'Socials', linkUrl: 'socials' },
-    // { linkName: 'AI Solutions', linkUrl: 'ai-solutions' },
-    { linkName: 'Brands', linkUrl: 'brand' },
+    { linkName: 'Contact', linkUrl: 'brand' },
   ];
 
   const menuBtn = 'block bg-white h-0.5 w-5 rounded transition duration-200 ease-in-out';

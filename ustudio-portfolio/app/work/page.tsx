@@ -62,9 +62,9 @@ console.log(portfolioWork);
         />
       )}
 
-      <div className='flex justify-center'>
+      <div className='flex justify-center gap-4 md:gap-7'>
         {portfolioWorkTypes.map((workType, i) => (
-          <button className='btn py-2 px-5 rounded-lg border-unilever text-darkUnilever font-extrabold capitalize cursor-pointer' key={`brand-${i}`} onClick={() => getResults(workType)}>
+          <button className={`draw-border-link border border-solid border-transparent work-btn relative btn py-2 px-5 rounded-lg  text-black font-medium capitalize cursor-pointer ${portfolioWork.length > 0 && portfolioWork[0].projectType == workType && 'selected'}`} key={`brand-${i}`} onClick={() => getResults(workType)}>
             {workType}
           </button>
         ))}
