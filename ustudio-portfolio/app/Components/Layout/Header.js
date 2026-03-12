@@ -18,8 +18,7 @@ export default function Header() {
 
   const navLinks = [
     { linkName: 'About Us', linkUrl: 'about-us' },
-    { linkName: 'Work', linkUrl: 'work' },
-    { linkName: 'Contact', linkUrl: 'brand' },
+    { linkName: 'Our Work', linkUrl: 'work' },
   ];
 
   const menuBtn = 'block bg-white h-0.5 w-5 rounded transition duration-200 ease-in-out';
@@ -82,9 +81,9 @@ export default function Header() {
 
   return (
     <header id="header" className={`
-      ${isHome ? 'bg-transparent' : 'bg-white'} 
-      ${scrolledPastHero ? 'bg-white!' : 'bg-transparent'} 
-      w-full lg:fixed lg:top-0 lg:z-80`
+      ${isHome ? 'bg-transparent' : 'bg-white shadow-lg'} 
+      ${scrolledPastHero ? 'bg-white! shadow-lg' : 'bg-transparent'} 
+      w-full transition ease-in-out duration-300 lg:fixed lg:top-0 lg:z-80`
     }>
       <div className="flex mx-auto w-[85%] max-w-6xl justify-between items-center relative lg:justify-between xl:max-w-7xl">
         <div id="logo" className="p-3.5">

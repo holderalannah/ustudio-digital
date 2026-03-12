@@ -73,7 +73,7 @@ export default function Brands() {
     const opacity = useTransform(scrollYProgress, [0, 0.25, 0.55], [0, 0.65, 1]);
 
     return (
-        <div ref={brandRef} className='py-5 overflow-hidden md:py-10 lg:pb-20 lg:pt-16'>
+        <div ref={brandRef} className='py-5 overflow-hidden md:py-10 lg:pb-20 lg:pt-10'>
             <motion.div style={{ opacity, translateY }}>
                 <h2 className='leading-[1.45] flex flex-col font-medium justify-center text-[36px] text-black text-center tracking-[-0.18px]'>Brands We Work With</h2>
                 <div className='size-full mt-7 md:mt-[3.4rem]' >
