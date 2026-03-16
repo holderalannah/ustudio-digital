@@ -18,8 +18,8 @@ export default function Innerpage({children, title}){
         })
     }
 return(
-        <div className='pb-5 lg:pb-14 lg:mt-[88px]'>
-            <motion.div className='h-[150px] bg-cover bg-center bg-no-repeat bg-header mb-8 relative flex justify-center items-center text-darkPurple! lg:h-[200px] lg:mb-12'>
+        <div className='pb-5 mt-[82px] lg:pb-14 lg:mt-[88px]'>
+            <motion.div className='h-[150px] mb-3 relative flex justify-center items-center text-darkPurple! lg:h-[200px] lg:mb-12'>
                 <Heading>{title.split("").map((letter, i) => (
                     <motion.span key={`${letter}-${i}-headline`} initial="initial" variants={variant} custom={i} whileInView="animate">{letter}</motion.span>
                 ) )}</Heading>

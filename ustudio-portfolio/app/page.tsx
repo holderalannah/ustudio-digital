@@ -72,7 +72,6 @@ export default function Home() {
         },
     ];
 
-  // const heroRef = useRef(null);
   const featRef = useRef(null);
 
   const { ref: heroRef, inView } = useInView({

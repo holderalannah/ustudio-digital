@@ -21,10 +21,8 @@ export default function Header() {
     { linkName: 'Our Work', linkUrl: 'work' },
   ];
 
-  const menuBtn = 'block bg-white h-0.5 w-5 rounded transition duration-200 ease-in-out';
+  const menuBtn = 'block bg-darkPink h-0.5 w-5 rounded transition duration-200 ease-in-out';
   const menuBtnCenter = 'absolute inset-0 m-auto';
-
-
 
   // update isHome when the route changes
   useEffect(() => {
@@ -83,7 +81,7 @@ export default function Header() {
     <header id="header" className={`
       ${isHome ? 'bg-transparent' : 'bg-white shadow-lg'} 
       ${scrolledPastHero ? 'bg-white! shadow-lg' : 'bg-transparent'} 
-      w-full transition ease-in-out duration-300 lg:fixed lg:top-0 lg:z-80`
+      w-full transition ease-in-out duration-300 fixed z-50 top-0`
     }>
       <div className="flex mx-auto w-[85%] max-w-6xl justify-between items-center relative lg:justify-between xl:max-w-7xl">
         <div id="logo" className="p-3.5">
@@ -94,7 +92,7 @@ export default function Header() {
 
         <button
           aria-label="Menu"
-          className="w-10 h-10 rounded-xl cursor-pointer flex flex-col justify-center items-center gap-1 bg-darkPink relative lg:hidden"
+          className="w-10 h-10 rounded-xl cursor-pointer flex flex-col justify-center items-center gap-1 bg-white relative lg:hidden"
           onClick={toggleMenu}
         >
           <span className={`${menuBtn} ${open ? `${menuBtnCenter} rotate-135` : ''}`} />
@@ -104,8 +102,8 @@ export default function Header() {
 
         <Nav
           obj={navLinks}
-          addedNavClass={`transition-all duration-200 ease-in ${open ? 'fixed top-[85px] left-0 w-full h-full bg-white p-6 z-[200] lg:h-auto' : 'hidden lg:static lg:bg-transparent lg:w-auto lg:h-auto'} lg:flex`}
-          addedClass={`${open ? 'flex flex-col lg:flex-row' : ''} ${isHome ? 'text-white' : 'text-black!'} ${scrolledPastHero && isHome ? 'text-black!' : 'text-white'} justify-around gap-5 w-full lg:flex lg:gap-7 xl:gap-12 font-semibold`}
+          addedNavClass={`transition-all duration-200 ease-in ${open ? 'fixed top-[85px] left-0 w-full h-[15vh] bg-darkPurple p-6 z-[200] lg:h-auto' : 'hidden lg:static lg:bg-transparent lg:w-auto lg:h-auto'} lg:flex`}
+          addedClass={`${open ? 'flex flex-col lg:flex-row' : ''} ${isHome ? 'text-white' : 'text-black!'} ${scrolledPastHero && isHome ? 'text-black!' : 'lg:text-white'} justify-around gap-5 w-full lg:flex lg:gap-7 xl:gap-12 font-semibold`}
           navigate={() => setOpen(false)}
         />
       </div>

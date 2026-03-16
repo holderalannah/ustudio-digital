@@ -22,7 +22,7 @@ export default function DigitalModal({data, isOpen, onClose, isWeb }){
             <h2 className="font-extrabold text-2xl lg:text-3xl">{data?.projectTitle}</h2>
 
             <div className={`flex w-full justify-between items-start flex-col h-[87%] ${ isWeb && `flex-wrap`} overflow-auto overflow-x-hidden md:h-[87%] lg:flex-row lg:h-[80%] lg:overflow-auto lg:justify-center lg:items-center lg:mb-7`}>
-                <div className="w-full h-[0%] overflow-auto md:overflow-hidden md:h-[65%] lg:h-full lg:w-1/2 lg:overflow-auto">
+                <div className="w-full h-[48%] overflow-auto md:overflow-hidden md:h-[65%] lg:h-full lg:w-1/2 lg:overflow-auto">
                     <DigitalSection heading="U-Studio">
                         <p>Toronto, Ontario, <strong>Canada</strong></p>
                     </DigitalSection>

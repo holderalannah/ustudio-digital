@@ -209,6 +209,12 @@ nav ul li a.active {
   padding-bottom: 5.125rem;
 }
 
+@media screen and (max-width: 1023px){
+  .swiper-wrapper {
+    margin-top: 69px;
+  }
+}
+
 .swiper-pagination {
   bottom: 2rem !important;
 }
@@ -216,6 +222,7 @@ nav ul li a.active {
 body .swiper-pagination-bullet-active {
   background: var(--swiper-pagination-color, var(--color-darkPink));
 }
+
 
 .swiper-nav-container button.swiper-nav-btns {
   cursor: pointer;
@@ -225,6 +232,30 @@ body .swiper-pagination-bullet-active {
   height: 46px;
   display: flex;
   justify-content: center;
+}
+
+@media screen and (min-width: 1024px) {
+  .swiper-nav-container button.swiper-nav-btns {
+    border-radius: 0%;
+    width: 30px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+  }
+
+  button.swiper-nav-btns {
+    position: absolute;
+  }
+
+  button.swiper-nav-btns.custom-prev {
+    left: 0;
+    right: initial;
+  }
+
+  button.swiper-nav-btns.custom-next {
+    right: 0;
+    left: right;
+  }
 }
 
 .swiper-nav-container button.swiper-nav-btns:disabled {

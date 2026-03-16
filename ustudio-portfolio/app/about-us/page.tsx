@@ -36,7 +36,7 @@ export default function AboutUs(){
                 <div className='max-w-[750px] mt-6 mb-6 mx-auto lg:mt-8 lg:mb-0'>
                     <button onClick={openModal} className='hover:cursor-pointer relative group/item'>
                         <Image src={VideoThumbnail} alt="U-Studio 2025 Sizzel Reel" />
-                        <div className='absolute top-0 bottom-0 right-0 left-0 m-auto z-10 md:w-[100px] md:h-[100px]'>
+                        <div className='absolute top-0 bottom-0 right-0 left-0 m-auto z-10 w-[18vw] h-[18vh] md:w-[100px] md:h-[100px]'>
                             <Play className='transition-all w-full h-full fill-white group-hover/item:fill-[#8f2363]' />
                         </div>
                     </button>

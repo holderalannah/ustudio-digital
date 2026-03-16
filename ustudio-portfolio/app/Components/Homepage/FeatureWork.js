@@ -27,15 +27,23 @@ export default function FeatureWork({title, cardInfo, campaign, sliderNumber }){
             slidesPerView: sliderNumber,
             spaceBetween: 0,
         },
+        1540: {
+            slidesPerView: 5,
+            spaceBetween: 0,
+        },
+        1920: {
+            slidesPerView: 6,
+            spaceBetween: 0,
+        }
     };
 
   
     return(
         <section className='my-10 lg:my-10'>
             <Container>
-                <h2 className='leading-[1.45] flex flex-col font-medium justify-center text-[36px] text-black text-center mb-0 tracking-[-0.18px]'>{title}</h2>
+                <h2 className='leading-[1.45] flex flex-col font-medium justify-center text-[36px] text-black text-center mb-3 lg:mb-0 tracking-[-0.18px]'>{title}</h2>
             </Container>
-            <Swiper className='swiper-feature-slider pt-14!'
+            <Swiper className='swiper-feature-slider pt-[182px!] lg:pt-14!'
                 modules={[ Navigation, Pagination, A11y ]}
                 spaceBetween={0}
                 navigation={{ 
@@ -51,7 +59,7 @@ export default function FeatureWork({title, cardInfo, campaign, sliderNumber }){
                 onSlideChange={() => console.log('slide change')}
                 onSwiper={(swiper) => console.log(swiper)}
             >
-                <div className='swiper-nav-container gap-4 flex absolute top-0 right-0'>
+                <div className='swiper-nav-container absolute gap-4 flex justify-center left-0 right-0 top-0 z-50 lg:left-[initial] lg:justify-normal lg:w-full lg:top-1/2 lg:items-center'>
                     
                     <button onClick={(e)=> e.preventDefault()} className="swiper-nav-btns custom-prev group-hover/item:opacity-100" aria-label='Prev'>
                         <RightArrow className='fill-white rotate-180 opacity-100 w-5 group-hover/item:opacity-100' />
