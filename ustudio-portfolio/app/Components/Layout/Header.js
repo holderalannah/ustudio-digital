@@ -83,10 +83,10 @@ export default function Header() {
       ${scrolledPastHero ? 'bg-white! shadow-lg' : 'bg-transparent'} 
       w-full transition ease-in-out duration-300 fixed z-50 top-0`
     }>
-      <div className="flex mx-auto w-[85%] max-w-6xl justify-between items-center relative lg:justify-between xl:max-w-7xl">
+      <div className="flex mx-auto w-[90%] max-w-6xl justify-between items-center relative lg:justify-between xl:max-w-7xl">
         <div id="logo" className="p-3.5">
           <Link href="/">
-            <Image className="max-w-[220px] transition-all" src={checkLogoState()} alt="U-Studio Logo" />
+            <Image className="max-w-[173px] md:max-w-[220px] transition-all" src={checkLogoState()} alt="U-Studio Logo" />
           </Link>
         </div>
 
@@ -103,8 +103,9 @@ export default function Header() {
         <Nav
           obj={navLinks}
           addedNavClass={`transition-all duration-200 ease-in ${open ? 'fixed top-[85px] left-0 w-full h-[15vh] bg-darkPurple p-6 z-[200] lg:h-auto' : 'hidden lg:static lg:bg-transparent lg:w-auto lg:h-auto'} lg:flex`}
-          addedClass={`${open ? 'flex flex-col lg:flex-row' : ''} ${isHome ? 'text-white' : 'text-black!'} ${scrolledPastHero && isHome ? 'text-black!' : 'lg:text-white'} justify-around gap-5 w-full lg:flex lg:gap-7 xl:gap-12 font-semibold`}
+          addedClass={`${open ? 'flex flex-col lg:flex-row' : ''} ${isHome ? 'text-white' : 'text-black!'} ${scrolledPastHero && isHome ? 'text-black!' : 'lg:text-white'} justify-around gap-5 w-full lg:flex lg:gap-7 xl:gap-12 font-semibold `}
           navigate={() => setOpen(false)}
+          linkClasses={`${isHome && !scrolledPastHero && 'after:bg-white!'} ${scrolledPastHero && isHome ? 'after:bg-darkPink transition delay-150 duration-300 ease-in-out' : ''}`}
         />
       </div>
     </header>

@@ -1,0 +1,1 @@
+export const h2Styles = `leading-[1.45] flex flex-col font-base justify-center text-[36px] text-black text-center tracking-[-0.18px] lg:text-[50px] lg:tracking-[-3.4px]`;

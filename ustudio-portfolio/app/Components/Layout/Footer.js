@@ -1,5 +1,4 @@
-import Nav from './Nav';
-import CenteredCallout from '../CenteredCallout';
+import FooterCallout from '../FooterCallout';
 
 export default function Footer(){
     const thisyear = new Date();
@@ -7,7 +6,7 @@ export default function Footer(){
     console.log()
     return(
         <footer id="footer" >
-            <CenteredCallout />
+            <FooterCallout />
         </footer>
     )
 }

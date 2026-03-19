@@ -1,6 +1,7 @@
 'use client';
 import { useRef } from 'react';
-import { motion, useScroll, useTransform, useSpring } from 'motion/react';
+import { motion, useScroll, useTransform } from 'motion/react';
+import { h2Styles } from '../../lib/styles';
 import BrandCard from './BrandCard';
 import AxeLogo from '../../../public/images/logos/axe-logo.png';
 import DegreeLogo from '../../../public/images/logos/degree-logo.png';
@@ -11,6 +12,7 @@ import KnorrLogo from '../../../public/images/logos/knorr-logo.png';
 import SheaMoistureLogo from '../../../public/images/logos/sheaMoisture-logo.png';
 import TresemmeLogo from '../../../public/images/logos/tresemme-logo.png';
 import VaselineLogo from '../../../public/images/logos/vaseline-logo.png';
+
 
 export default function Brands() {
 
@@ -73,9 +75,9 @@ export default function Brands() {
     const opacity = useTransform(scrollYProgress, [0, 0.25, 0.55], [0, 0.65, 1]);
 
     return (
-        <div ref={brandRef} className='py-5 overflow-hidden md:py-10 lg:pb-20 lg:pt-10'>
+        <div ref={brandRef} className='py-5 overflow-hidden md:py-10 lg:pt-10 lg:pb-[105px]'>
             <motion.div style={{ opacity, translateY }}>
-                <h2 className='leading-[1.45] flex flex-col font-medium justify-center text-[36px] text-black text-center tracking-[-0.18px]'>Brands We Work With</h2>
+                <h2 className={h2Styles}>Brands We Work With</h2>
                 <div className='size-full mt-7 md:mt-[3.4rem]' >
                     <div style={{ ['--marquee-duration']: '28s', ['--marquee-gap']: '1rem' }}>
                         <BrandCard data={brandList} />
