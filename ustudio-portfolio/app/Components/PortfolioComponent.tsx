@@ -68,6 +68,7 @@ export default function PortfolioComponent({
             >
               <PortfolioCard
                 data={work}
+                portfolioType={portfolioType}
                 onClick={() => onItemClick(globalIndex)}
               />
             </motion.li>

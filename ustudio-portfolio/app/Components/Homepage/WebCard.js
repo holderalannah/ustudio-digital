@@ -12,7 +12,7 @@ export default function WebCard({cardImg, cardUrl, cardProject, cardBrand}){
                         <p className='text-sm uppercase font-bold'>{cardBrand}</p>
                         <p className='text-lg'>{cardProject}</p>
 
-                        <Link target='_blank' href={cardUrl} className='text-sm hover:underline focus:underline'>View</Link>
+                        <p target='_blank' href={cardUrl} className='text-sm group-hover/item::underline group-focus/item:underline'>View</p>
                     </div>
                 </Link>
             ) } 

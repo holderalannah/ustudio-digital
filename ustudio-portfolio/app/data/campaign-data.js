@@ -12,20 +12,6 @@ import UniThanks from '../../public/images/campaigns/project-campaign-unilever-t
 
 export const campaigns = [
         {
-            projectYear: "2024",
-            projectBrand: "Dove",
-            projectTitle: "Whole Body Deodorants",
-            projectImg: DoveEA,
-            project: "Dove Whole Body Deodorants",
-            projectType: "wyng campaigns",
-            projectBusinessGroup: "Personal Care",
-            projectCategory: "Skin Cleansing",
-            projectBriefing: "Develop a landing page and a WYNG page to promote Dove's new Women's Whole Body Deodorants, featuring the latest products from the collection. This project emphasizes analytics, incorporating Meta and TikTok pixels, as part of a major campaign highlighting Dove's Whole Body Deodorants. The focus is on providing protection not only for underarms but also for thighs and feet.",
-            projectSolution: "The WYNG experience mirrors the Whole Body landing page with interactive elements like a product slider but also includes a Dove-focused social media playlist of influencers using the products, and animations to create an engaging user experience and promote the Whole Body Deodorants.",
-            projectPlatform: "WYNG",
-            projectUrl: "Unavailable",
-        },
-        {
             projectYear: "2025",
             projectBrand: "Dove Men+Care",
             projectTitle: "Dove EA Sports",

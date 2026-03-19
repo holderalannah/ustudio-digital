@@ -9,9 +9,10 @@ import DMCLogo from '../../../public/images/logos/dove-men-logo.png';
 import DoveLogo from '../../../public/images/logos/dove-logo.png';
 import HellmannsLogo from '../../../public/images/logos/hellmanns-logo.png';
 import KnorrLogo from '../../../public/images/logos/knorr-logo.png';
-import SheaMoistureLogo from '../../../public/images/logos/sheaMoisture-logo.png';
-import TresemmeLogo from '../../../public/images/logos/tresemme-logo.png';
 import VaselineLogo from '../../../public/images/logos/vaseline-logo.png';
+import SheaMoistureLogo from '../../../public/images/logos/sheaMoisture-logo.png';
+import SeventGenLogo from '../../../public/images/logos/seventh-generation-logo.png';
+import TresemmeLogo from '../../../public/images/logos/tresemme-logo.png';
 
 
 export default function Brands() {
@@ -46,6 +47,11 @@ export default function Brands() {
             brandName: "Knorr",
             brandImg: KnorrLogo,
             brandUrl: "https://www.knorr.com/ca/en/home.html",
+        },
+          {
+            brandName: "Seventh Generation",
+            brandImg: SeventGenLogo,
+            brandUrl: "hhttps://www.seventhgeneration.com/",
         },
         {
             brandName: "SheaMoisture",

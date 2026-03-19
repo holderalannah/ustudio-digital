@@ -13,7 +13,7 @@ import DoveOOH from '/videos/Dove-OOH.mp4';
 import AxeFFImg from '../public/images/homepage/axe-fine-fragrances.jpg';
 import DoveBridgertonImg from '../public/images/homepage/dove-bridgerton.jpg';
 import DoveCrumblImg from '../public/images/homepage/dove-crumbl.jpg';
-import DoveWhy2kImg from '../public/images/homepage/dove-why2k.jpg';
+import DoveWhy2kImg from '../public/images/homepage/dove-why2k-project.jpg';
 import KnorrFlavImg from '../public/images/homepage/knorr-flavourmania.jpg';
 import DegreeBWImg from '../public/images/homepage/degree-body-wash.jpg';
 import DegreeWBImg from '../public/images/homepage/degree-whole-body.jpg';
@@ -130,7 +130,7 @@ export default function Home() {
 
       <div ref={featRef}>
         <motion.div style={{ opacity, y }}>
-          <FeatureWork sliderNumber={4} title="Latest Digital Web" cardInfo={digitalProjects} />
+          <FeatureWork sliderNumber={4} title="Our Work" cardInfo={digitalProjects} />
         </motion.div>
       </div>
 

@@ -2,21 +2,51 @@
 import DoveDream from '../../public/images/socials/socials-dove-dreamhair.jpg'
 import ollyCostco from '../../public/images/socials/socials-olly-costco.jpg'
 import KnorrGreenFlags from '../../public/images/socials/socials-knorr-greenflags.jpg'
+import KnorrFlavourmania from '../../public/images/socials/social-knorr-flavourmania.jpg'
+import HellmannsHall from '../../public/images/socials/socials-hellmanns-halloween-2025.jpg'
 
 export const socialsData = [
+    // {
+    //     projectYear: "2025",
+    //     projectBrand: "Dove",
+    //     projectTitle: "Dove Hair",
+    //     projectThumbnail: DoveDream,
+    //     projectImg: DoveDream,
+    //     project: "Dove Dream Re Launch OOH Takeover",
+    //     projectType: "socials",
+    //     projectBusinessGroup: "Personal Care",
+    //     projectCategory: "Hair",
+    //     projectBriefing: "An exciting start to 2025 with Dove Hair going through the biggest reinvention in over 15 years. Dove is taking a revolutionary step forward in damage repair solutions, backed by 10 years of research and 2 patented technologies, for not just hair repaired but hair reborn 10x stronger.",
+    //     projectSolution: "Making a Bold Statement Across Toronto on Canada's Largest Displays (Yonge and Dundas Square and Toronto's Union Station). With 14 Screens Illuminating the City. Covering Over 50,000 sq. ft. of Signage! Reaching a vast 48,596,814 Million Impressions!",
+    //     projectUrl: "/",
+    // },
+      {
+        projectYear: "2025",
+        projectBrand: "Knorr",
+        projectTitle: "Knorr Flavourmania",
+        projectThumbnail: KnorrFlavourmania,
+        projectImg: KnorrFlavourmania,
+        project: "Flavourmania",
+        projectType: "socials",
+        projectBusinessGroup: "CPG",
+        projectCategory: "Foods",
+        projectBriefing: "To drive buzz and virality through tapping into the dating passions space with Gen-Z’s, by relaying the message that cooking is the ultimate green flag.",
+        projectSolution: "Supported this campaign by creating 7 simple reel/static content in-house that tied in the theme, uploaded brand owned and influencer assets unto Instagram and TikTok, and engaged with 30+ dating & cooking related posts to extend the reach of the campaign and overall brand visibility",
+        projectUrl: "https://www.instagram.com/stories/highlights/17851924161559289/",
+    },
     {
         projectYear: "2025",
-        projectBrand: "Dove",
-        projectTitle: "Dove Hair",
-        projectThumbnail: DoveDream,
-        projectImg: DoveDream,
-        project: "Dove Dream Re Launch OOH Takeover",
+        projectBrand: "Hellmanns",
+        projectTitle: "Hellmanns Halloween",
+        projectThumbnail: HellmannsHall,
+        projectImg: HellmannsHall,
+        project: "Hellmanns Halloween",
         projectType: "socials",
-        projectBusinessGroup: "Personal Care",
-        projectCategory: "Hair",
-        projectBriefing: "An exciting start to 2025 with Dove Hair going through the biggest reinvention in over 15 years. Dove is taking a revolutionary step forward in damage repair solutions, backed by 10 years of research and 2 patented technologies, for not just hair repaired but hair reborn 10x stronger.",
-        projectSolution: "Making a Bold Statement Across Toronto on Canada's Largest Displays (Yonge and Dundas Square and Toronto's Union Station). With 14 Screens Illuminating the City. Covering Over 50,000 sq. ft. of Signage! Reaching a vast 48,596,814 Million Impressions!",
-        projectUrl: "/",
+        projectBusinessGroup: "Foods",
+        projectCategory: "Dressings",
+        projectBriefing: "",
+        projectSolution: "",
+        projectUrl: "https://www.instagram.com/reel/DQevHIODrte/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     },
     {
         projectYear: "2025",
