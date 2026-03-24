@@ -75,9 +75,13 @@ export default function FeatureWork({title, cardInfo, sliderNumber }){
                 {cardInfo.map((card) =>{
                     return(
                         <SwiperSlide>
-                          <WebCard key={card.cardProject}
-                                cardImg={card.cardImg} cardUrl={card.cardUrl} cardProject={card.cardProject} cardBrand={card.cardBrand}
-                                />
+                            <WebCard 
+                                key={card.cardProject}
+                                cardImg={card.cardImg} 
+                                cardUrl={card.cardUrl} 
+                                cardProject={card.cardProject} 
+                                cardBrand={card.cardBrand}
+                            />
                         </SwiperSlide>
                     )
                 })}
