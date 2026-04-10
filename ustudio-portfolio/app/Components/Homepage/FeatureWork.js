@@ -12,9 +12,11 @@ import 'swiper/css/pagination';
 import 'swiper/css/a11y';
 
 import WebCard from './WebCard';
+import SocialCard from './SocialCard'
+import OohCard from './OohCard'
 import Link from 'next/link';
 
-export default function FeatureWork({title, cardInfo, sliderNumber }){
+export default function FeatureWork({title, cardInfo, sliderNumber, workType }){
 
     const swiperBreakpoints = {
         320: {
@@ -75,20 +77,32 @@ export default function FeatureWork({title, cardInfo, sliderNumber }){
                 {cardInfo.map((card) =>{
                     return(
                         <SwiperSlide>
-                            <WebCard 
-                                key={card.cardProject}
-                                cardImg={card.cardImg} 
-                                cardUrl={card.cardUrl} 
-                                cardProject={card.cardProject} 
-                                cardBrand={card.cardBrand}
-                            />
+                            { workType === 'socials' ? (
+                                <SocialCard
+                                    key={card.cardSocial}
+                                    cardSocial={card.cardSocial}
+                                />
+                            ) : workType === 'ooh' ? (
+                                <OohCard />
+                            ) : workType === 'dev' ? (
+                                <WebCard
+                                    key={card.cardProject}
+                                    cardImg={card.cardImg}
+                                    cardUrl={card.cardUrl}
+                                    cardProject={card.cardProject}
+                                    cardBrand={card.cardBrand}
+                                />
+                            ) :
+                            <div></div>
+                           
+                            }
                         </SwiperSlide>
                     )
                 })}
                 
             </Swiper>
             <div className='m-auto flex justify-center'>
-                <Link className='text-center uppercase inline font-bold tracking-wider relative undraw-border-link pb-1.5' href="/work">View All</Link>
+                <Link className='text-center uppercase inline font-bold tracking-wider relative undraw-border-link pb-1.5' href={`/work?type=${workType}`}>View All</Link>
             </div>
         </section>
     )

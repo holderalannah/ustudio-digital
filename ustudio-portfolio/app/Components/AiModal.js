@@ -1,7 +1,6 @@
 import Modal from "./Modal"
 import Link from "next/link"
 import Image from "next/image";
-import PhoneLayer from '../../public/images/phone-layer.png'
 
 function CampaignSection({children, heading}){
     return(

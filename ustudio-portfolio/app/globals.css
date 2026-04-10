@@ -304,6 +304,12 @@ background: var(--swiper-pagination-color, var(--color-darkPink)) !important;
    opacity: 1;
 }
 
+.swiper-slide-active iframe {
+  pointer-events: auto; /* Active slide allows interaction */
+}
+.swiper-wrapper.dragging iframe {
+  pointer-events: none; /* Disable interaction while dragging */
+}
 /* end of slider styles */
 /* socials page styles */
 .socials-pin-layout {

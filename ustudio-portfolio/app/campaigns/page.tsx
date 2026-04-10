@@ -1,0 +1,71 @@
+'use client'
+
+import { useState } from "react";
+import Innerpage from "../Components/Layout/Innerpage";
+import CampaignModal from '../Components/CampaignModal';
+import { campaigns } from '../data/campaign-data';
+import PortfolioComponent from "../Components/PortfolioComponent";
+
+export default function EmailCampaigns() {
+
+    const [isOpen, setIsOpen] = useState(false);
+    const [selectedItem, setSelectedItem] = useState(null);
+
+    const openModal = (work: any) => {
+        setSelectedItem(work);
+        setIsOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsOpen(false);
+        setSelectedItem(null); // Optional: clear data when closed
+    };
+
+    return(
+        <Innerpage title="Campaign Portfolio">
+             {selectedItem !== null && (
+                <CampaignModal data={campaigns[selectedItem]} isOpen={isOpen} onClose={closeModal} />
+            )}
+            <div>
+                <PortfolioComponent
+                    itemsPerPage={8}
+                    portfolioType={campaigns}
+                    onItemClick={openModal}
+                />
+                </div>
+            {/* <ul id="portfolio-brands" className="flex justify-center gap-2 flex-wrap md:justify-between lg:gap-5 lg:justify-center xl:justify-start">
+                {campaigns.map((work, index) => 
+                    <li key={work.projectTitle} className="w-full relative shadow-xl rounded-3xl bg-white group/item mb-5 max-w-[225px] md:w-[31%] lg:w-[23%]">
+                        <button onClick={() => openModal(index)} className="transition-all no-underline! hover:text-white group-hover/item:no-underline w-full cursor-pointer">
+                            
+                            <div className="transition-all w-full h-full absolute top-0 left-0 group-hover/item:bg-[rgba(22,20,158,0.65)] rounded-3xl z-10"></div>
+
+                            <div>
+                                <div className="relative h-[340px] w-full rounded-t-3xl overflow-hidden">
+                                    <Image src={work.projectImg} alt={work.projectTitle} className='-mt-5 shadow-2xl absolute top-0 left-auto right-auto m-auto' />
+                                </div>
+                                <div className="py-5 px-4 relative z-20 text-left">
+                                    <p className="text-sm leading-5 font-bold">{work.projectBrand} {work.projectYear}</p>
+                                    <p className="text-[17px] leading-normal font-bold">{work.projectTitle}</p>
+
+                                    <div className="pt-5">
+                                        <button className="transition-all group-hover/item:underline cursor-pointer">
+                                            <span className="flex gap-2 items-center font-medium">
+                                                More Info<RightArrow className='fill-black w-5 group-hover/item:fill-darkPink' />
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </button>
+                    </li>
+                )}
+            </ul> */}
+        </Innerpage>
+    )
+}
+
+
+
+

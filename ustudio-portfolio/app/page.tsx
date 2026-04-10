@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'motion/react';
 import { useInView } from 'react-intersection-observer';
@@ -73,6 +74,64 @@ export default function Home() {
     },
   ];
 
+  const oohProjects = [
+     {
+      cardBrand: "Dove",
+      cardImg: DoveBridgertonImg,
+      cardProject: "Dove X Bridgerton",
+      cardUrl: "https://www.dove.com/ca/en/dove-bridgerton.html"
+    },
+  ];
+
+  const socialProjects = [
+    {
+      cardBrand: "Olly",
+      cardSocial: "https://www.instagram.com/reel/DW2LCGDB4Hj/",
+      cardUrl: "https://www.instagram.com/reel/DW2LCGDB4Hj/"
+    },
+    {
+      cardBrand: "Hellmann's",
+      cardSocial: "https://www.instagram.com/reel/DWjgN8JxdY5/",
+      cardUrl: "https://www.instagram.com/p/DWjgN8JxdY5/"
+    },
+    {
+      cardBrand: "LiquidIV",
+      cardSocial: "https://www.instagram.com/p/DGWPe8fyEVl/",
+      cardUrl: "https://www.instagram.com/p/DGWPe8fyEVl/"
+    },
+    {
+      cardBrand: "Hellmann's",
+      cardSocial: "https://www.instagram.com/p/DTifptCDp2Z/",
+      cardUrl: "https://www.instagram.com/p/DTifptCDp2Z/?img_index=1"
+    },
+    {
+      cardBrand: "Knorr",
+      cardSocial: "https://www.instagram.com/reel/DFdbQrrpRxm/",
+      cardUrl: "https://www.instagram.com/reels/DFdbQrrpRxm/"
+    },
+    {
+      cardBrand: "Olly",
+      cardSocial: "https://www.instagram.com/p/DU1iIXIjZBE/",
+      cardUrl: "https://www.instagram.com/p/DU1iIXIjZBE/"
+    },
+    {
+      cardBrand: "Knorr",
+      cardSocial: "https://www.instagram.com/p/DQXVoHMkgAb/",
+      cardUrl: "https://www.instagram.com/stories/highlights/17851924161559289/"
+    },
+    {
+      cardBrand: "Hellmann's",
+      cardSocial: "https://www.instagram.com/reels/DV1LdwJjll_/",
+      cardUrl: "https://www.instagram.com/reels/DV1LdwJjll_/"
+    },
+    {
+      cardBrand: "Knorr",
+      cardSocial: "https://www.instagram.com/reels/DL0YO4zp3Ht/",
+      cardUrl: "https://www.instagram.com/reels/DL0YO4zp3Ht/"
+    },
+  ];
+  
+
   const featRef = useRef(null);
 
   const { ref: heroRef, inView } = useInView({
@@ -130,7 +189,13 @@ export default function Home() {
 
       <div ref={featRef}>
         <motion.div style={{ opacity, y }}>
-          <FeatureWork sliderNumber={4} title="Our Work" cardInfo={digitalProjects} />
+          <FeatureWork sliderNumber={4} title="Websites" workType="dev" cardInfo={digitalProjects} />
+        </motion.div>
+      </div>
+
+      <div ref={featRef}>
+        <motion.div style={{ opacity, y }}>
+          <FeatureWork sliderNumber={4} title="Social Media" workType="socials" cardInfo={socialProjects} />
         </motion.div>
       </div>
 
