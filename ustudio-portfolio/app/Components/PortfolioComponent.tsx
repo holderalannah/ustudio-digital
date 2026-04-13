@@ -61,7 +61,7 @@ export default function PortfolioComponent({
           return (
             <motion.li
               key={`${work.projectTitle}-${globalIndex}`}
-              className={`w-full md:w-[31.4%] relative shadow-xl bg-transparent xl:w-[23.7%] group/item card ${isOOH ? `h-[310px]` : `h-[381px]`}`}
+              className={`w-full md:w-[31.4%] relative shadow-xl bg-transparent xl:w-[23.7%] group/item card mb-5 md:mb-0 ${isOOH ? `h-[310px] lg:h-[381px]` : `h-[381px]`}`}
               variants={cardVariants}
               initial="init"
               whileInView="animate"

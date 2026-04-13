@@ -5,7 +5,7 @@ import TresOhhAlistVideo from '../../videos/TRES OOH YONGE AND DUNDAS VIDEO.mp4'
 
 export const oohData = [
     {
-        projectYear: "2025",
+        projectYear: "2026",
         projectBrand: "Tresemme",
         projectTitle: "Tresemme A-List Collection",
         projectThumbnail: TresemmeAlistImg,

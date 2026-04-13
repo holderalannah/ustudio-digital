@@ -8,6 +8,7 @@ import Video from 'next-video';
 import studioReel from '/videos/2025_Seezle_Reel_Ustudio.mp4';
 import VideoThumbnail from '../../public/images/sizzle-thumbnail.jpg';
 import Play from '../Components/Svgs/Play';
+import Team from '../Components/Team';
 
 
 export default function AboutUs(){
@@ -41,6 +42,8 @@ export default function AboutUs(){
                         </div>
                     </button>
                 </div>
+
+                <Team />
             </div>
         </Container>
        </Innerpage>
