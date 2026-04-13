@@ -1,5 +1,7 @@
 import DoveDreamHairImg from '../../public/images/ooh/ooh-dove-dreamhair.jpg';
 import TresemmeAlistImg from '../../public/images/ooh/ooh-tresemme-alist.jpg';
+import DoveOhhHairVideo from '../../videos/Dove-OOH.mp4';
+import TresOhhAlistVideo from '../../videos/TRES OOH YONGE AND DUNDAS VIDEO.mp4';
 
 export const oohData = [
     {
@@ -9,6 +11,7 @@ export const oohData = [
         projectThumbnail: TresemmeAlistImg,
         projectImg: TresemmeAlistImg,
         project: "",
+        projectVideo: TresOhhAlistVideo,
         projectType: "ooh",
          projectBusinessGroup: "Personal Care",
         projectCategory: "Hair Care",
@@ -20,6 +23,7 @@ export const oohData = [
         projectThumbnail: DoveDreamHairImg,
         projectImg: DoveDreamHairImg,
         project: "",
+        projectVideo: DoveOhhHairVideo,
         projectType: "ooh",
          projectBusinessGroup: "Personal Care",
         projectCategory: "Hair Care",

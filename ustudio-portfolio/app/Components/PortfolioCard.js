@@ -1,5 +1,7 @@
 import Image from "next/image";
+
 import RightArrow from '../Components/Svgs/RightArrow'
+import Play from '../Components/Svgs/Play';
 import dynamic from 'next/dynamic'
 
 const InstagramEmbed = dynamic(() => import('./InstagramEmbed'), { ssr: false })
@@ -20,6 +22,8 @@ export default function PortfolioCard({ data, onClick, portfolioType }) {
                     <div className="relative w-full h-full overflow-hidden card_content-container">
                         <div className="relative">
                             <Image src={data.projectImg} alt={data.projectTitle} className={`shadow-2xl absolute top-0 left-auto right-auto m-auto transition duration-500 ease-in-out scale-[1.09]`} />
+                            <Play className='transition-all w-full h-full fill-white group-hover/item:fill-[#8f2363]' />
+                            
                         </div>
                         <div className="py-5 px-4 z-20 text-left absolute bottom-0">
                             <p className="text-sm leading-5 font-bold word">{data.projectBrand} {data.projectYear}</p>

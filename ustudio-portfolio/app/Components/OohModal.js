@@ -1,5 +1,7 @@
 import Modal from "./Modal"
+import Video from 'next-video';
 import Image from "next/image";
+
 
 function CampaignSection({ children, heading }) {
     return (
@@ -12,12 +14,12 @@ function CampaignSection({ children, heading }) {
 
 export default function OohModal({ data, isOpen, onClose }) {
     return (
-        <Modal isOpen={isOpen} onClose={onClose} addedStyles={'overflow-auto h-[95vh] md:overflow-hidden md:h-[865px] lg:h-[80vh] flex flex-col justify-center items-center'}>
+        <Modal isOpen={isOpen} onClose={onClose} addedStyles={'overflow-auto h-auto md:overflow-hidden flex flex-col justify-center items-center'}>
             <h2 className="font-extrabold text-2xl lg:text-3xl">{data.projectTitle}</h2>
 
 
-            <div className={`flex w-full justify-between items-start flex-col h-[87%] flex-wrap overflow-auto overflow-x-hidden md:h-[89%] lg:flex-row lg:h-[80%] lg:overflow-auto lg:justify-center lg:items-center lg:mb-7`}>
-                {data.projectBriefing && (
+            <div className={`flex w-full items-center flex-col h-[87%] mb-0`}>
+                {/* {data.projectBriefing && (
                     <div className="w-full h-[52%] overflow-auto md:pr-1.5 md:h-[65%] md:w-[47%] lg:pr-0 lg:h-full lg:w-[30%] lg:overflow-auto">
                         <CampaignSection heading="U-Studio">
                             <p>Toronto, Ontario, <strong>Canada</strong></p>
@@ -54,12 +56,13 @@ export default function OohModal({ data, isOpen, onClose }) {
                         }
 
                     </div>
-                )}
+                )} */}
                 <div className="w-full justify-center items-center flex flex-col h-full lg:items-baseline lg:overflow-hidden">
 
                     <div className=" relative">
                         <div className="">
-                            <Image src={data.projectImg} alt={data.projectTitle} className='w-full' />
+                            {/* <Image src={data.projectImg} alt={data.projectTitle} className='w-full' /> */}
+                            <Video className="md:min-h-[270px] lg:min-h-[526px]" src={data.projectVideo} />
                         </div>
                     </div>
 

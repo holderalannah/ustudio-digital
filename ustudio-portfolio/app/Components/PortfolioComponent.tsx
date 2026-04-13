@@ -41,6 +41,8 @@ export default function PortfolioComponent({
     animate: { opacity: 1, y: 0 },
   };
 
+  const isOOH = portfolioType.some(item => item.projectType === 'ooh');
+
   return (
     <>
       <motion.ul
@@ -53,13 +55,13 @@ export default function PortfolioComponent({
         viewport={{ amount: 0.05, once: true }}
       >
         {visibleItems.map((work, idx) => {
-          // compute the global index corresponding to this item
+          // compute the global index corresponding to this item portfolioType
           const globalIndex = idx; // OK because we slice from 0; if you later use offset, compute offset + idx
 
           return (
             <motion.li
               key={`${work.projectTitle}-${globalIndex}`}
-              className="w-full md:w-[31.4%] relative shadow-xl bg-transparent xl:w-[23.7%] group/item card h-[381px]"
+              className={`w-full md:w-[31.4%] relative shadow-xl bg-transparent xl:w-[23.7%] group/item card ${isOOH ? `h-[310px]` : `h-[381px]`}`}
               variants={cardVariants}
               initial="init"
               whileInView="animate"
