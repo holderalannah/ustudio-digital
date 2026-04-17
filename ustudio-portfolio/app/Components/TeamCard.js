@@ -4,7 +4,7 @@ export default function TeamCard({data}){
     return(
         <div className="teamCard relative md:w-[32%] mb-5 md:mb-8">
             {data.teamMemberPic && (
-                <div className="teamCard_container">
+                <div className="teamCard_container max-w-[320px] md:max-w-none">
                     <Image src={data.teamMemberPic} alt={`picture of ${data.teamMemberName}`} />
                 </div>
             )}
