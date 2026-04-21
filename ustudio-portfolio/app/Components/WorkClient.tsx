@@ -126,7 +126,7 @@ export default function WorkClient({ allData, webDevworks }: Props) {
         {portfolioWorkTypes.map((workType, i) => (
           <button
             key={`brand-${i}`}
-            className={`draw-border-link border border-solid border-transparent work-btn relative btn py-2 px-5 rounded-lg text-black font-medium capitalize cursor-pointer ${currentFilter === workType ? 'selected' : ''}`}
+            className={`draw-border-link border border-solid border-transparent work-btn relative btn py-2 px-5 rounded-lg text-black font-medium capitalize cursor-pointer ${workType === 'ooh' && 'uppercase'}  ${currentFilter === workType ? 'selected' : ''}`}
             onClick={() => getResults(workType)}
           >
             {workType}
