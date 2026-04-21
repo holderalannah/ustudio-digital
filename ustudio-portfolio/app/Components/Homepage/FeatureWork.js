@@ -47,7 +47,7 @@ export default function FeatureWork({title, cardInfo, sliderNumber, workType }){
             <Container>
                 <h2 className={h2Styles}>{title}</h2>
             </Container>
-            <Swiper className='swiper-feature-slider pt-[182px!] lg:pt-14!'
+            <Swiper className='swiper-feature-slider pt-[182px] lg:pt-14!'
                 modules={[ Navigation, Pagination, A11y ]}
                 spaceBetween={0}
                 navigation={{ 

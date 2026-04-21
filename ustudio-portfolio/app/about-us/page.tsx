@@ -29,13 +29,11 @@ export default function AboutUs(){
             <Modal isOpen={isOpen} onClose={closeModal} addedStyles="[ > button]:lg:right-[17px] flex justify-center items-center">
                 <Video src={studioReel} />
             </Modal>
-            <Container>
-                <div>
+            <div className='bg-white pb-[12vh]'>
+                <Container>
                     <p className='px-0 text-center pb-6 text-lg w-full mx-auto lg:px-20 lg:text-xl lg:max-w-[885px]'>U-Studio is Unilever's innovative in-house digital marketing and creative agency, established in collaboration with Oliver in 2016. Designed to produce swift and cost-effective content for Unilever's diverse brand portfolio, U-Studio operates across more than 20 global locations. The agency specializes in digital and social content, and has recently expanded its expertise to include AI-driven creations. By leveraging its integrated approach, U-Studio delivers production that is 30% more affordable and faster than traditional external agencies.</p>
-
-                
-                </div>
-            </Container>
+                </Container>
+            </div>
            
            <section className="py-[14vh] bg-[#6aa341]">
 
