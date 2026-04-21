@@ -13,6 +13,7 @@ export default function Header() {
 
   const [ open, setOpen ] = useState(false);
   const [ isHome, setIsHome ] = useState( pathname === '/' );
+  const [ isContactUs, setContactUs ] = useState( pathname === '/contact-us' );
   const [ scrolledPastHero, setScrolledPastHero ] = useState( pathname!== '/' );
 
 
@@ -28,6 +29,7 @@ export default function Header() {
   // update isHome when the route changes
   useEffect(() => {
     setIsHome(pathname === '/');
+    setContactUs(pathname === '/contact-us')
   }, [pathname]);
 
   // manage body class for menu overflow and add/remove resize listener
@@ -69,7 +71,7 @@ export default function Header() {
   };
 
   const checkLogoState = () => {
-    if ( isHome && !scrolledPastHero){
+    if ( isHome && !scrolledPastHero || isContactUs ){
       return WhiteLogo
     } else if ( isHome && scrolledPastHero ) {
       return SiteLogo
@@ -80,8 +82,8 @@ export default function Header() {
 
   return (
     <header id="header" className={`
-      ${isHome ? 'bg-transparent' : 'bg-white'} 
-      ${scrolledPastHero ? 'bg-white!' : 'bg-transparent'} 
+      ${isHome  || isContactUs ? 'bg-transparent' : 'bg-white'} 
+      ${scrolledPastHero && !isContactUs ? 'bg-white!' : 'bg-transparent'} 
       w-full transition ease-in-out duration-300 fixed z-50 top-0`
     }>
       <div className="flex mx-auto w-[90%] max-w-6xl justify-between items-center relative lg:justify-between xl:max-w-7xl">
@@ -104,7 +106,7 @@ export default function Header() {
         <Nav
           obj={navLinks}
           addedNavClass={`transition-all duration-200 ease-in ${open ? 'fixed top-[85px] left-0 w-full h-[15vh] bg-darkPurple p-6 z-[200] lg:h-auto' : 'hidden lg:static lg:bg-transparent lg:w-auto lg:h-auto'} lg:flex`}
-          addedClass={`${open ? 'flex flex-col lg:flex-row' : ''} ${isHome ? 'text-white' : 'text-black!'} ${scrolledPastHero && isHome ? 'text-black!' : 'lg:text-white'} justify-around gap-5 w-full lg:flex lg:gap-7 xl:gap-12 font-semibold `}
+          addedClass={`${open ? 'flex flex-col lg:flex-row' : ''} ${isHome || isContactUs ? 'text-white' : 'text-black!'} ${scrolledPastHero && isHome ? 'text-black!' : 'lg:text-white'} justify-around gap-5 w-full lg:flex lg:gap-7 xl:gap-12 font-semibold `}
           navigate={() => setOpen(false)}
           linkClasses={`${isHome && !scrolledPastHero && 'after:bg-white!'} ${scrolledPastHero && isHome ? 'after:bg-darkPink transition delay-150 duration-300 ease-in-out' : ''}`}
         />

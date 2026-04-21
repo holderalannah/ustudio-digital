@@ -119,16 +119,16 @@ export default function Home() {
       cardSocial: "https://www.instagram.com/p/DQXVoHMkgAb/",
       cardUrl: "https://www.instagram.com/stories/highlights/17851924161559289/"
     },
-    {
-      cardBrand: "Hellmann's",
-      cardSocial: "https://www.instagram.com/reels/DV1LdwJjll_/",
-      cardUrl: "https://www.instagram.com/reels/DV1LdwJjll_/"
-    },
-    {
-      cardBrand: "Knorr",
-      cardSocial: "https://www.instagram.com/reels/DL0YO4zp3Ht/",
-      cardUrl: "https://www.instagram.com/reels/DL0YO4zp3Ht/"
-    },
+    // {
+    //   cardBrand: "Hellmann's",
+    //   cardSocial: "https://www.instagram.com/reels/DV1LdwJjll_/",
+    //   cardUrl: "https://www.instagram.com/reels/DV1LdwJjll_/"
+    // },
+    // {
+    //   cardBrand: "Knorr",
+    //   cardSocial: "https://www.instagram.com/reels/DL0YO4zp3Ht/",
+    //   cardUrl: "https://www.instagram.com/reels/DL0YO4zp3Ht/"
+    // },
   ];
   
 

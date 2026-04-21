@@ -1,15 +1,14 @@
-import Innerpage from "../Components/Layout/Innerpage"
 import { h2Styles } from "../lib/styles"
 import Heading1 from "../Components/Layout/Heading1"
 
 export default function Contact() {
 
-    const btnStyles = `capitalize bg-unilever text-white py-2 px-6 rounded-3xl hover:underline hover:bg-darkUnilever`
+    const btnStyles = `capitalize bg-darkUnilever text-white py-2 px-6 rounded-3xl hover:underline hover:bg-darkUnilever`
     return (
-        <div className="pt-10">
-            <Innerpage title="Get in Touch">
+        <div className="pt-20 pb-12 text-white bg-unilever lg:pt-36 lg:pb-20">
+            <div title="Get in Touch">
 
-                {/* <Heading1 addedStyles="text-darkPurple">Get in Touch</Heading1> */}
+                <Heading1 addedStyles="text-white">Get in Touch</Heading1>
 
                 <div className="mt-12 lg:mt-18"><p className="text-center text-2xl tracking-wide">Turn your brief into something brilliant.</p></div>
 
@@ -22,7 +21,7 @@ export default function Contact() {
                     </div>
 
                 </div>
-            </Innerpage>
+            </div>
         </div>
     )
 }
