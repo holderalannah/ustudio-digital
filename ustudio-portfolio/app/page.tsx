@@ -1,12 +1,13 @@
 "use client";
 
-import { useEffect, useRef } from 'react';
-import { motion, useScroll, useTransform, useSpring } from 'motion/react';
+import { useEffect } from 'react';
+import { motion } from 'motion/react';
 import { useInView } from 'react-intersection-observer';
 
 import About from './Components/Homepage/About';
 import Brands from './Components/Homepage/Brands';
 import FeatureWork from './Components/Homepage/FeatureWork';
+import Callout from './Components/Homepage/Callout';
 
 import BackgroundVideo from 'next-video/background-video';
 import DoveOOH from '/videos/Dove-OOH.mp4';
@@ -132,8 +133,6 @@ export default function Home() {
   ];
   
 
-  const featRef = useRef(null);
-
   const { ref: heroRef, inView } = useInView({
     threshold: 0.09,
     rootMargin: '0px'
@@ -144,16 +143,8 @@ export default function Home() {
     window.dispatchEvent(new CustomEvent('heroScrolled', { detail: { past: !inView } }));
   }, [inView]);
 
-  const { scrollYProgress } = useScroll({
-    target: featRef,
-    offset: ['start end', 'center center'],
-  });
 
-  const rawOpacity = useTransform(scrollYProgress, [0, 0.15, 0.8], [0, 0.65, 1]);
-  const rawY = useTransform(scrollYProgress, [0, 0.8], [30, 0]); // 30px down -> 0
 
-  const opacity = useSpring(rawOpacity, { stiffness: 100, damping: 20 });
-  const y = useSpring(rawY, { stiffness: 120, damping: 24 });
 
   const variants = {
     hidden: { opacity: 0 },
@@ -173,7 +164,7 @@ export default function Home() {
     <div id="home-page" className="">
 
       <div ref={heroRef} className='flex justify-center items-center w-full relative overflow-hidden h-screen lg:min-h-[630px]'>
-        <div className='bg-darkPurple/75 dark:bg-darkUnilever/75 h-screen w-full absolute top-0 left-0 z-5'></div>
+        <div className='bg-unilever/75 dark:bg-darkUnilever/75 h-screen w-full absolute top-0 left-0 z-5'></div>
         <BackgroundVideo src={DoveOOH}>
           <motion.h1 initial="hidden" variants={variants} whileInView="show" className="relative text-white font-normal text-5xl mx-auto text-center leading-[0.85] tracking-[-2px] z-10 md:text-6xl lg:text-8xl lg:tracking-[-3.4px] lg:max-w-[638px]">
             {headLine.split(' ').map((word, i) =>
@@ -187,17 +178,25 @@ export default function Home() {
 
       <About />
 
-      <div ref={featRef}>
-        <motion.div style={{ opacity, y }}>
-          <FeatureWork sliderNumber={4} title="Websites" workType="dev" cardInfo={digitalProjects} />
-        </motion.div>
-      </div>
+      <Callout>
+          <h2 className="mb-5 text-[30px] leading-[1.12] font-semibold tracking-[-0.03em] sm:text-[38px] lg:text-[44px]">AI Leading Agency</h2>
+          <p className='text-[24px] leading-[1.6]'>Carrot cake brownie dragée tootsie roll apple pie bonbon wafer. Liquorice muffin marzipan sesame snaps tiramisu lollipop dessert cotton candy. Lollipop pastry cupcake danish tiramisu macaroon candy brownie biscuit.</p>
+          <p className='mt-6 text-[24px] leading-[1.6]'>Gummies pudding lemon drops cake topping shortbread pastry danish. Sesame snaps brownie tootsie roll bonbon gingerbread tootsie roll gummies chocolate. Cotton candy cake sweet powder danish jujubes.</p>
+      </Callout>
 
-      <div ref={featRef}>
-        <motion.div style={{ opacity, y }}>
-          <FeatureWork sliderNumber={4} title="Social Media" workType="socials" cardInfo={socialProjects} />
-        </motion.div>
-      </div>
+      
+      <FeatureWork sliderNumber={4} title="Websites" workType="dev" cardInfo={digitalProjects} />
+      
+
+      <Callout>
+          <h2 className="mb-5 text-[30px] leading-[1.12] font-semibold tracking-[-0.03em] sm:text-[38px] lg:text-[44px]">We Get Your Message Out</h2>
+          <p className='text-[24px] leading-[1.6]'>Carrot cake brownie dragée tootsie roll apple pie bonbon wafer. Liquorice muffin marzipan sesame snaps tiramisu lollipop dessert cotton candy. Lollipop pastry cupcake danish tiramisu macaroon candy brownie biscuit.</p>
+          <p className='mt-6 text-[24px] leading-[1.6]'>Gummies pudding lemon drops cake topping shortbread pastry danish. Sesame snaps brownie tootsie roll bonbon gingerbread tootsie roll gummies chocolate. Cotton candy cake sweet powder danish jujubes.</p>
+      </Callout>
+
+     
+      <FeatureWork sliderNumber={4} title="Social Media" workType="socials" cardInfo={socialProjects} />
+      
 
       <Brands />
 

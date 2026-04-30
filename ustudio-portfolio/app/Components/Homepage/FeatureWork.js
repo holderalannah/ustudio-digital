@@ -1,10 +1,11 @@
 "use client"
-
+import { useRef } from 'react';
 import { SwiperSlide, Swiper } from 'swiper/react';
 import { Navigation, Pagination, A11y } from 'swiper/modules';
 import RightArrow from '../Svgs/RightArrow';
 import Container from '../Container';
 import { h2Styles } from '../../lib/styles';
+import { motion, useScroll, useTransform, useSpring } from 'motion/react';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -17,6 +18,19 @@ import OohCard from './OohCard'
 import Link from 'next/link';
 
 export default function FeatureWork({title, cardInfo, sliderNumber, workType }){
+
+    const featRef = useRef(null);
+    
+    const { scrollYProgress } = useScroll({
+        target: featRef,
+        offset: ['start end', 'center center'],
+    });
+
+    const rawOpacity = useTransform(scrollYProgress, [0, 0.35, 0.58], [0, 0.75, 1]);
+    const rawY = useTransform(scrollYProgress, [0, 0.6], [30, 0]);
+
+    const opacity = useSpring(rawOpacity, { stiffness: 100, damping: 20 });
+    const y = useSpring(rawY, { stiffness: 120, damping: 24 });
 
     const swiperBreakpoints = {
         320: {
@@ -43,7 +57,8 @@ export default function FeatureWork({title, cardInfo, sliderNumber, workType }){
 
   
     return(
-        <section className='my-10 lg:my-10'>
+        <section ref={featRef} className='my-10 lg:my-16'>
+            <motion.div style={{ opacity, y }}>
             <Container>
                 <h2 className={h2Styles}>{title}</h2>
             </Container>
@@ -104,6 +119,7 @@ export default function FeatureWork({title, cardInfo, sliderNumber, workType }){
             <div className='m-auto flex justify-center'>
                 <Link className='text-center uppercase inline font-bold tracking-wider relative undraw-border-link pb-1.5' href={`/work?type=${workType}`}>View All</Link>
             </div>
+            </motion.div>
         </section>
     )
 }

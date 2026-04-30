@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export default function WebCard({cardImg, cardUrl, cardProject, cardBrand}){
     return(
-        <div className=' group/item h-[416px] overflow-hidden'>
+        <div className=' group/item h-[300px] overflow-hidden md:h-[416px]'>
             {cardUrl && (
                 <Link target='_blank' href={cardUrl} className='webcard relative z-10 group/item'>
                     <Image src={cardImg} alt={cardProject} className='mb-5 h-full max-w-none w-auto transition-all group-hover/item:scale-[1.4] group-focus/item:scale-[1.4]' />

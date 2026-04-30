@@ -53,8 +53,8 @@ export default function FooterCallout(){
 
     return(
         <div ref={ref} className="bg-darkPurple dark:bg-darkUnilever/75 pt-16 text-white text-center w-full lg:pt-28 relative overflow-hidden">
-            <motion.div style={{ filter, transfrom }}>
-                <Image src={UstudioDovePromo} alt="ustudio fove hair promotion" className='object-cover opacity-20 absolute z-10 top-0 left-0 right-0 bottom-0 m-auto' />
+            <motion.div style={{ filter, transfrom }} className='absolute top-0'>
+                <Image src={UstudioDovePromo} alt="ustudio fove hair promotion" className='object-cover h-screen opacity-20 z-10 m-auto md:h-auto' />
             </motion.div>
          <div className='relative z-20 pb-16 lg:pb-28'>
                <motion.h3 initial="hidden" variants={variants}  whileInView="show" className='text-[36px] mx-auto max-w-[330px] font-normal leading-[0.9] relative size-full text-center text-white tracking-[-1.8px] mb-5 lg:mb-10 lg:text-[60px] lg:max-w-[620px]'>

@@ -18,6 +18,7 @@ export default function Header() {
 
 
   const navLinks = [
+    { linkName: 'Home', linkUrl: '/' },
     { linkName: 'About Us', linkUrl: 'about-us' },
     { linkName: 'Our Work', linkUrl: 'work' },
     { linkName: 'Contact Us', linkUrl: 'contact-us' },
@@ -82,8 +83,8 @@ export default function Header() {
 
   return (
     <header id="header" className={`
-      ${isHome  || isContactUs ? 'bg-transparent' : 'bg-white'} 
-      ${scrolledPastHero && !isContactUs ? 'bg-white!' : 'bg-transparent'} 
+      ${isHome  || isContactUs ? 'bg-transparent' : 'bg-[rgba(255,255,255,0.7)]'} 
+      ${scrolledPastHero && !isContactUs ? 'bg-[rgba(255,255,255,0.7)]!' : 'bg-transparent'} 
       w-full transition ease-in-out duration-300 fixed z-50 top-0`
     }>
       <div className="flex mx-auto w-[90%] max-w-6xl justify-between items-center relative lg:justify-between xl:max-w-7xl">
@@ -93,7 +94,7 @@ export default function Header() {
           </Link>
         </div>
 
-        <button
+        {/* <button
           aria-label="Menu"
           className="w-10 h-10 rounded-xl cursor-pointer flex flex-col justify-center items-center gap-1 bg-white relative lg:hidden"
           onClick={toggleMenu}
@@ -101,12 +102,19 @@ export default function Header() {
           <span className={`${menuBtn} ${open ? `${menuBtnCenter} rotate-135` : ''}`} />
           <span className={`${menuBtn} transition-opacity duration-150 ${open ? 'opacity-0 -translate-y-1.5' : ''}`} />
           <span className={`${menuBtn} ${open ? `${menuBtnCenter} -rotate-135` : ''}`} />
-        </button>
+        </button> */}
 
-        <Nav
+        {/* <Nav
           obj={navLinks}
           addedNavClass={`transition-all duration-200 ease-in ${open ? 'fixed top-[85px] left-0 w-full h-[15vh] bg-darkPurple p-6 z-[200] lg:h-auto' : 'hidden lg:static lg:bg-transparent lg:w-auto lg:h-auto'} lg:flex`}
           addedClass={`${open ? 'flex flex-col lg:flex-row' : ''} ${isHome || isContactUs ? 'text-white' : 'text-black!'} ${scrolledPastHero && isHome ? 'text-black!' : 'lg:text-white'} justify-around gap-5 w-full lg:flex lg:gap-7 xl:gap-12 font-semibold `}
+          navigate={() => setOpen(false)}
+          linkClasses={`${isHome && !scrolledPastHero && 'after:bg-white!'} ${scrolledPastHero && isHome ? 'after:bg-darkPink transition delay-150 duration-300 ease-in-out' : ''}`}
+        /> */}
+         <Nav
+          obj={navLinks}
+          addedNavClass={`fixed right-0 left-0 mx-auto rounded-[100vh] p-[.4375rem] transition-all duration-200 ease-in  max-w-[453px] w-[85%] bottom-5 h-auto flex lg:bottom-[inherit] lg:top-5 lg:w-full lg:right-[90px] lg:left-[inherit] ${scrolledPastHero && isHome ? 'bg-[rgba(0,0,0,0.8)] lg:bg-transparent' : 'bg-[rgba(255,255,255,0.7)] lg:bg-transparent'}`}
+          addedClass={`${scrolledPastHero && isHome ? 'text-white lg:text-black!' : 'lg:text-white'} justify-around gap-2 w-full px-2.5 flex text-sm lg:gap-7 xl:gap-12 font-semibold `}
           navigate={() => setOpen(false)}
           linkClasses={`${isHome && !scrolledPastHero && 'after:bg-white!'} ${scrolledPastHero && isHome ? 'after:bg-darkPink transition delay-150 duration-300 ease-in-out' : ''}`}
         />

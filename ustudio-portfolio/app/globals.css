@@ -287,6 +287,10 @@ background: var(--swiper-pagination-color, var(--color-darkPink)) !important;
   opacity: 0.65;
 }
 
+/* homepage */
+#home-page mux-video.next-video-bg-video {
+    transform: scale(1.5);
+}
 .webcard:before {
   opacity: 0;
   content: "";

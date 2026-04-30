@@ -1,11 +1,12 @@
 import { h2Styles } from "../lib/styles"
 import Heading1 from "../Components/Layout/Heading1"
 
+
 export default function Contact() {
 
     const btnStyles = `capitalize bg-darkUnilever text-white py-2 px-6 rounded-3xl hover:underline hover:bg-darkUnilever`
     return (
-        <div className="pt-20 pb-12 text-white bg-unilever lg:pt-36 lg:pb-20">
+        <div className="pt-20 pb-12 text-white bg-unilever h-[70vh] flex justify-center items-center lg:h-auto lg:pt-36 lg:pb-20">
             <div title="Get in Touch">
 
                 <Heading1 addedStyles="text-white">Get in Touch</Heading1>
