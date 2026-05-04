@@ -143,9 +143,6 @@ export default function Home() {
     window.dispatchEvent(new CustomEvent('heroScrolled', { detail: { past: !inView } }));
   }, [inView]);
 
-
-
-
   const variants = {
     hidden: { opacity: 0 },
     show: (i: number) => ({
@@ -164,7 +161,10 @@ export default function Home() {
     <div id="home-page" className="">
 
       <div ref={heroRef} className='flex justify-center items-center w-full relative overflow-hidden h-screen lg:min-h-[630px]'>
-        <div className='bg-unilever/75 dark:bg-darkUnilever/75 h-screen w-full absolute top-0 left-0 z-5'></div>
+        <motion.div className='bg-unilever/75 dark:bg-darkUnilever/75 h-screen w-full absolute top-0 left-0 z-5'
+          animate={{ backgroundColor: ['rgba(138, 34, 97,.75)', 'rgba(0, 102, 204,0.75)', 'rgba(107, 162, 68,0.75)', 'rgba(226,115,40, .75)'] }}
+          transition={{ duration: 4.5, delay: 2, repeat: Infinity, repeatType: 'reverse' }}>
+        </motion.div>
         <BackgroundVideo src={DoveOOH}>
           <motion.h1 initial="hidden" variants={variants} whileInView="show" className="relative text-white font-normal text-5xl mx-auto text-center leading-[0.85] tracking-[-2px] z-10 md:text-6xl lg:text-8xl lg:tracking-[-3.4px] lg:max-w-[638px]">
             {headLine.split(' ').map((word, i) =>
@@ -188,7 +188,7 @@ export default function Home() {
       <FeatureWork sliderNumber={4} title="Websites" workType="dev" cardInfo={digitalProjects} />
       
 
-      <Callout>
+      <Callout bgColour='bg-darkPurple text-white'>
           <h2 className="mb-5 text-[30px] leading-[1.12] font-semibold tracking-[-0.03em] sm:text-[38px] lg:text-[44px]">We Get Your Message Out</h2>
           <p className='text-[24px] leading-[1.6]'>Carrot cake brownie dragée tootsie roll apple pie bonbon wafer. Liquorice muffin marzipan sesame snaps tiramisu lollipop dessert cotton candy. Lollipop pastry cupcake danish tiramisu macaroon candy brownie biscuit.</p>
           <p className='mt-6 text-[24px] leading-[1.6]'>Gummies pudding lemon drops cake topping shortbread pastry danish. Sesame snaps brownie tootsie roll bonbon gingerbread tootsie roll gummies chocolate. Cotton candy cake sweet powder danish jujubes.</p>

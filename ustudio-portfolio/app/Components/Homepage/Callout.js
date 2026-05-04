@@ -2,7 +2,7 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
 
-export default function Callout({children}){
+export default function Callout({children, bgColour = 'bg-unilever/10'}){
     const calloutRef = useRef(null);
 
     const { scrollYProgress } = useScroll({
@@ -16,7 +16,7 @@ export default function Callout({children}){
     return(
         <section ref={calloutRef} className="mt-10 lg:mt-14">
             <motion.div style={{ opacity, translateY }}>
-                <div className='flex flex-col text-center items-center justify-center rounded-2xl border border-unilever/20 bg-unilever/10 py-8 px-7 mx-auto max-w-[1024px] border border-unilever rounded-2xl md:px-16 md:py-14 lg:px-20'>
+                <div className={`flex flex-col text-center items-center justify-center rounded-2xl border border-unilever/20 py-8 px-7 mx-auto max-w-[1024px] border border-unilever rounded-2xl md:px-16 md:py-14 lg:px-20 ${bgColour}`}>
                     {children}
                 </div>
             </motion.div>
