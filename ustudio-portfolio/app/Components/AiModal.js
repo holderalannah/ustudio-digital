@@ -1,6 +1,15 @@
+import {useState} from 'react'
 import Modal from "./Modal"
 import Link from "next/link"
 import Image from "next/image";
+import { SwiperSlide, Swiper } from 'swiper/react';
+import { Navigation, FreeMode, Thumbs, Pagination, A11y } from 'swiper/modules';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/free-mode';
+import 'swiper/css/thumbs';
 
 function CampaignSection({children, heading}){
     return(
@@ -12,9 +21,11 @@ function CampaignSection({children, heading}){
 }
 
 export default function AiModal({data, isOpen, onClose }){
+    const [thumbsSwiper, setThumbsSwiper] = useState(null);
+
     return (
        <Modal isOpen={isOpen} onClose={onClose} addedStyles={'overflow-auto h-[95vh] md:overflow-hidden md:h-[865px] lg:h-[80vh] flex flex-col justify-center items-center'}>
-            <h2 className="font-extrabold text-2xl lg:text-3xl">{data.projectTitle}</h2>
+            {/* <h2 className="font-extrabold text-2xl lg:text-3xl">{data.projectTitle}</h2> */}
 
 
             <div className={`flex w-full justify-between items-start flex-col h-[87%] flex-wrap overflow-auto overflow-x-hidden md:h-[89%] lg:flex-row lg:h-[80%] lg:overflow-auto lg:justify-center lg:items-center lg:mb-7`}>
@@ -56,14 +67,30 @@ export default function AiModal({data, isOpen, onClose }){
 
                 </div>
 )}
-                <div className="w-full justify-center items-center flex flex-col h-full lg:items-baseline lg:overflow-hidden">
+                <div id="ai-modal-container" className="w-full justify-center items-center flex flex-col h-full lg:items-baseline lg:overflow-hidden">
                     
-                        <div className=" relative">
-                                <div className="">
-                                    <Image src={data.projectImg} alt={data.projectTitle} className='w-full' />   
+                    <Swiper
+                        style={{
+                            '--swiper-navigation-color': '#000',
+                            '--swiper-pagination-color': '#000',
+                        }}
+                        spaceBetween={5}
+                        navigation={true}
+                        pagination={{clickable: true}}
+                        keyboard={{enabled: true }}
+                        thumbs={{ swiper: thumbsSwiper }}
+                        modules={[Pagination, FreeMode, Navigation, Thumbs]}
+                        className="mySwiper2 w-full flex items-center justify-center"
+                    >
+                        {data.projectImg.map((projectSlide, i) => (
+                            <SwiperSlide>
+                                <div className='h-full flex flex-col items-center justify-center'>
+                                    <Image src={projectSlide} alt={data.projectTitle} className='w-full' />
                                 </div>
-                        </div>
-                    
+                            </SwiperSlide>
+                    ))}
+                        
+                    </Swiper>
                 </div>
             </div>
 

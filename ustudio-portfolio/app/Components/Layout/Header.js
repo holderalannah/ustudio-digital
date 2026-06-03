@@ -114,7 +114,7 @@ export default function Header() {
          <Nav
           obj={navLinks}
           addedNavClass={`fixed right-0 left-0 mx-auto rounded-[100vh] p-[.4375rem] transition-all duration-200 ease-in  max-w-[453px] w-[85%] bottom-5 h-auto flex lg:bottom-[inherit] lg:top-5 lg:w-full lg:right-[90px] lg:left-[inherit] ${scrolledPastHero && isHome ? 'bg-[rgba(0,0,0,0.8)] lg:bg-transparent' : 'bg-[rgba(255,255,255,0.7)] lg:bg-transparent'}`}
-          addedClass={`${scrolledPastHero && isHome ? 'text-white lg:text-black!' : 'lg:text-white'} justify-around gap-2 w-full px-2.5 flex text-sm lg:gap-7 xl:gap-12 font-semibold `}
+          addedClass={`${scrolledPastHero && isHome ? 'text-white lg:text-black!' : !isHome ? 'lg:text-black!' : 'lg:text-white'} justify-around gap-2 w-full px-2.5 flex text-sm lg:gap-7 xl:gap-12 font-semibold `}
           navigate={() => setOpen(false)}
           linkClasses={`${isHome && !scrolledPastHero && 'after:bg-white!'} ${scrolledPastHero && isHome ? 'after:bg-darkPink transition delay-150 duration-300 ease-in-out' : ''}`}
         />
