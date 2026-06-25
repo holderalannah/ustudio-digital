@@ -11,7 +11,7 @@ import HellmannsLogo from '../../../public/images/logos/hellmanns-logo.png';
 import KnorrLogo from '../../../public/images/logos/knorr-logo.png';
 import OllyLogo from '../../../public/images/logos/olly-logo-us.png';
 import VaselineLogo from '../../../public/images/logos/vaseline-logo.png';
-import SheaMoistureLogo from '../../../public/images/logos/sheaMoisture-logo.png';
+import SheaMoistureLogo from '../../../public/images/logos/sheamoisture-logo.png';
 import SeventGenLogo from '../../../public/images/logos/seventh-generation-logo.png';
 import TresemmeLogo from '../../../public/images/logos/tresemme-logo.png';
 
