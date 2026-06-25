@@ -434,7 +434,59 @@ div#home-page .next-video-container {
 	 --highlight: #f2e9da;
 }
 
-#ai-modal-container .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+/* #ai-modal-container .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
   bottom: 0px !important;
   top: inherit;
+} */
+
+#ai-modal-container .swiper-button-prev, 
+#ai-modal-container .swiper-button-next {
+  cursor: pointer;
+  background: var(--color-darkPink);
+  border-radius: 100%;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  transition: background-color .4s;
+  display: flex;
+  }
+
+#ai-modal-container .swiper-button-prev svg, 
+#ai-modal-container .swiper-button-next svg {
+  width: 18px;
+  fill: white;
+}
+
+@media screen and (min-width: 1024px) {
+  #ai-modal-container .swiper-button-prev, 
+  #ai-modal-container .swiper-button-next {
+    border-radius: 0;
+    justify-content: center;
+    width: 30px;
+    height: 60px;
+    display: flex;
+    }
+}
+
+#ai-modal-section .swiper-pagination {
+  bottom: 0px !important;
+  z-index: 999;
+    position: relative;
+    background-color: green;
+}
+
+div#ai-modal-section .swiper-wrapper {
+  padding-bottom: 0px !important;
+}
+
+div#ai-modal-section .swiper,
+div#ai-modal-section .swiper::-webkit-scrollbar {
+  overflow: auto !important;
+  overflow-x: hidden;
+   -ms-overflow-style: none;       /* IE and Edge */
+  scrollbar-width: none;    
+}
+
+div#ai-modal-section .swiper-slide {
+    overflow-x: hidden;
 }

@@ -90,7 +90,7 @@ export default function Header() {
       <div className="flex mx-auto w-[90%] max-w-6xl justify-between items-center relative lg:justify-between xl:max-w-7xl">
         <div id="logo" className="p-3.5">
           <Link href="/">
-            <Image className="max-w-[173px] md:max-w-[220px] transition-all" src={checkLogoState()} alt="U-Studio Logo" />
+            <Image loading="eager" className="max-w-[173px] md:max-w-[220px] transition-all" src={checkLogoState()} alt="U-Studio Logo" />
           </Link>
         </div>
 

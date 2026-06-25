@@ -22,18 +22,18 @@ export default function FooterCallout(){
     const paragraph = "Reach out to U-Studio Toronto "
     const linkText = "here";
 
-    const variants = {
-        hidden: {opacity: 0},
-        show: (i) => ({
-        y: 0,
-        opacity: 1,
-        transition: {
-            delay: i * 0.3,
-            type: "spring",
-            bounce: 0.4,
-        },
-        }),
-    }
+    // const variants = {
+    //     hidden: {opacity: 0},
+    //     show: (i) => ({
+    //     y: 0,
+    //     opacity: 1,
+    //     transition: {
+    //         delay: i * 0.3,
+    //         type: "spring",
+    //         bounce: 0.4,
+    //     },
+    //     }),
+    // }
 
     const pullupVariant = {
         initial: { y: 20, opacity: 0 },
@@ -57,15 +57,15 @@ export default function FooterCallout(){
                 <Image src={UstudioDovePromo} alt="ustudio fove hair promotion" className='object-cover h-screen opacity-20 z-10 m-auto md:h-auto lg:h-screen' />
             </motion.div>
          <div className='relative z-20 pb-16 lg:pb-28'>
-               <motion.h3 initial="hidden" variants={variants}  whileInView="show" className='text-[36px] mx-auto max-w-[330px] font-normal leading-[0.9] relative size-full text-center text-white tracking-[-1.8px] mb-5 lg:mb-10 lg:text-[60px] lg:max-w-[620px]'>
+               <motion.h3 initial="hidden"   whileInView="show" className='text-[36px] mx-auto max-w-[330px] font-normal leading-[0.9] relative size-full text-center text-white tracking-[-1.8px] mb-5 lg:mb-10 lg:text-[60px] lg:max-w-[620px]'>
                 {headline.split(' ').map((word, i) => 
-                     <motion.span key={`${word}-${i}`} variants={variants} custom={i}>
+                     <motion.span key={`${word}-${i}`}  custom={i}>
                         {`${word} `}
                     </motion.span>
                 )}
                </motion.h3>
 
-            <motion.p animate={variants} className='text-lg mb-5 lg:mb-10'>
+            <motion.p  className='text-lg mb-5 lg:mb-10'>
                 {paragraph} 
                 <motion.a className='font-bold inline-block' href="ustudiotoronto@ustudio.global">
                     {linkText}

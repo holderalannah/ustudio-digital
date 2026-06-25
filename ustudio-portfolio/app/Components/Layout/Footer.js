@@ -5,7 +5,7 @@ export default function Footer(){
     const year = thisyear.getFullYear();
     console.log()
     return(
-        <footer id="footer" >
+        <footer id="footer" className='relative'>
             <FooterCallout />
         </footer>
     )
