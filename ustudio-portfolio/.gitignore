@@ -41,9 +41,8 @@ yarn-error.log*
 next-env.d.ts
 .DS_Store
 ../.DS_Store
-/videos
 # next-video
-videos/*
+/videos/*.mp4
 !videos/*.json
 !videos/*.js
 !videos/*.ts
