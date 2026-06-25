@@ -7,7 +7,8 @@ import AboutBox from './AboutBox';
 import People from '../Svgs/People';
 import Build from '../Svgs/Build';
 import Marketing from '../Svgs/Marketing';
-import QRCode from '../Svgs/QRCode';
+import Innovation from '../Svgs/Innovation';
+import Award from '../Svgs/Award';
 import SocialMedia from '../Svgs/SocialMedia';
 
 export default function About() {
@@ -26,27 +27,27 @@ export default function About() {
     const aboutUStudio = [
         {
             itemHeading: "Integrated Model",
-            itemSvg: <People className='fill-white' />,
+            itemSvg: <Build className='fill-white' />,
             itemText: "Combines the strengths of both external and in-house agency capabilities",
         },
         {
             itemHeading: "Adaptability and Innovation",
-            itemSvg: <Marketing className='fill-white' />,
+            itemSvg: <Innovation className='fill-white' />,
             itemText: "It is a dedicated creative studio specifically built in partnership with Unilever to serve their marketing needs",
         },
         {
             itemHeading: <>Award&#8209;Winning&nbsp;Recognition</>,
-            itemSvg: <Build className='fill-white ' />,
+            itemSvg: <Award className='fill-white ' />,
             itemText: "Has achieved global recognition, repeatedly being named Campaign's global In-House Agency of the Year, highlighting its effectiveness and creative output",
         },
         {
             itemHeading: "Agile and Responsive Operations",
-            itemSvg: <People className='fill-white' />,
+            itemSvg: <Marketing className='fill-white' />,
             itemText: "Known for its ability to provide quick responsiveness, adaptable solutions, and efficient creative execution for Unilever's diverse brands",
         },
         {
             itemHeading: "Extensive Growth and Reach",
-            itemSvg: <QRCode className='fill-white' />,
+            itemSvg: <People className='fill-white' />,
             itemText: "U-Studio, in partnership with Oliver, has expanded considerably, now employing over 500 people across numerous studios in various countries",
         },
         {

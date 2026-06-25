@@ -190,8 +190,8 @@ export default function Home() {
 
       <Callout bgColour='bg-darkPurple text-white'>
           <h2 className="mb-5 text-[30px] leading-[1.12] font-semibold tracking-[-0.03em] sm:text-[38px] lg:text-[44px]">We Get Your Message Out</h2>
-          <p className='text-[24px] leading-[1.6]'>Carrot cake brownie dragée tootsie roll apple pie bonbon wafer. Liquorice muffin marzipan sesame snaps tiramisu lollipop dessert cotton candy. Lollipop pastry cupcake danish tiramisu macaroon candy brownie biscuit.</p>
-          <p className='mt-6 text-[24px] leading-[1.6]'>Gummies pudding lemon drops cake topping shortbread pastry danish. Sesame snaps brownie tootsie roll bonbon gingerbread tootsie roll gummies chocolate. Cotton candy cake sweet powder danish jujubes.</p>
+          <p className='text-[24px] leading-[1.6]'>U-Studio Toronto works closely with Unilever, like an in-house team. This helps us truly understand each brand's goals. As we are so connected, we can quickly create and share marketing messages that are right for each brand. This makes sure messages are clear and reach the right people fast.</p>
+          <p className='mt-6 text-[24px] leading-[1.6]'>We utilize smart tools, like AI (Pencil Pro), to help. These tools let us make many ads and creative content very quickly. This way, U-Studio can spread messages widely across different platforms, places and cultures, making sure Unilever's stories get out to everyone effectively</p>
       </Callout>
 
      
