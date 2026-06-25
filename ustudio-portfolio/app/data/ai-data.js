@@ -1,5 +1,3 @@
-import SeventhImg from '../../public/images/ai/project-ai-1850041.jpg'
-import SeventhThumb from '../../public/images/ai/project-ai-1850041-thumb.jpg'
 // 2447115
 import DoveMenFifaOne from '../../public/images/ai/2447115/tiktok english_option1.jpg'
 import DoveMenFifaTwo from '../../public/images/ai/2447115/tiktok english_option2.jpg'
@@ -127,16 +125,6 @@ export const aiSolutions = [
         projectBusinessGroup: "Personal Care",
         projectCategory: "Deodorants & Fragrances",
     },
-    {
-        projectYear: "2025",
-        projectBrand: "Seventh Generation",
-        projectTitle: "Biobased Cleaning Power",
-        projectThumbnail: SeventhThumb,
-        projectImg: SeventhImg,
-        project: "",
-        projectType: "ai solutions",
-        projectBusinessGroup: "Home Care",
-        projectCategory: "Fabric Cleaning",
-    },
+   
 ]
 

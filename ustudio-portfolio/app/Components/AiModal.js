@@ -85,7 +85,7 @@ export default function AiModal({data, isOpen, onClose }){
                         {data.projectImg.map((projectSlide, i) => (
                             <SwiperSlide>
                                 <div className='h-full flex flex-col items-center justify-center'>
-                                    <Image src={projectSlide} alt={data.projectTitle} className='w-full' />
+                                    <Image src={projectSlide} alt={data.projectTitle} className='h-full w-auto max-w-none' />
                                 </div>
                             </SwiperSlide>
                     ))}

@@ -1,5 +1,6 @@
 'use client';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import { motion, useInView, useReducedMotion } from 'motion/react';
 import Image from 'next/image';
 import Container from '../Components/Container';
 import Modal from '../Components/Modal';
@@ -8,7 +9,7 @@ import Video from 'next-video';
 import studioReel from '/videos/2025_Seezle_Reel_Ustudio.mp4';
 import VideoThumbnail from '../../public/images/sizzle-thumbnail.jpg';
 import Play from '../Components/Svgs/Play';
-import Team from '../Components/Team';
+// import Team from '../Components/Team';
 import Services from '../Components/Services';
 
 export default function AboutUs(){
@@ -29,20 +30,30 @@ export default function AboutUs(){
             <Modal isOpen={isOpen} onClose={closeModal} addedStyles="[ > button]:lg:right-[17px] flex justify-center items-center">
                 <Video src={studioReel} />
             </Modal>
-            <div className='bg-white pb-[12vh]'>
+            <div className='bg-white h-[75vh]'>
                 <Container>
                     <p className='px-0 text-center pb-6 text-lg w-full mx-auto lg:px-20 lg:text-xl lg:max-w-[885px]'>U-Studio is Unilever's innovative in-house digital marketing and creative agency, established in collaboration with Oliver in 2016. Designed to produce swift and cost-effective content for Unilever's diverse brand portfolio, U-Studio operates across more than 20 global locations. The agency specializes in digital and social content, and has recently expanded its expertise to include AI-driven creations. By leveraging its integrated approach, U-Studio delivers production that is 30% more affordable and faster than traditional external agencies.</p>
                 </Container>
             </div>
            
-           <section className="py-[14vh] bg-[#6aa341]">
+           <motion.section 
+                className="py-[14vh] h-screen" 
+                initial={{ background: "#8A2261"}} 
+                whileInView={{ background: "#6aa341" }} 
+                viewport={{ amount: 0.25 }} 
+                transition={{
+                    bounce: 0.64,
+                    duration: 1.5,
+                    ease: 'easeInOut'
+                }}
+            >
 
                 <Container>
                     <Services />
                 </Container>
-           </section>
+           </motion.section>
             
-            <div>
+            {/* <div>
                 <div className='py-[30vh] bg-unilever'>
                     <div className=' text-white'>
                         <p className='px-0 text-center pb-6 text-lg w-full mx-auto lg:px-20 lg:text-3xl lg:tracking-wide lg:leading-[1.5] lg:max-w-[885px]'>Meet Our Team of unique creative individuals who deliver meanningful digital experiences, products and socials.</p>
@@ -51,15 +62,35 @@ export default function AboutUs(){
                         <Team />
                     </div>
                 </div>
-            </div>
+            </div> */}
 
-            <section className='py-[30vh] text-white bg-darkUnilever'>
+            <motion.section 
+                className='py-[30vh] h-screen text-white'
+                initial={{ background: "#133062 "}} 
+                whileInView={{ background: "#0066cc" }} 
+                viewport={{ amount: 0.5 }} 
+                transition={{
+                    bounce: 0.64,
+                    duration: 1.5,
+                    ease: 'easeInOut'
+                }}
+            >
                 <div>
                     <p className='px-0 text-center pb-6 text-lg w-full mx-auto lg:px-20 lg:text-[2rem] lg:tracking-wide lg:leading-[1.2] lg:text-left lg:max-w-[985px]'>As Unilever's globally award-winning in-house agency, we deliver unmissable creative solutions across digital commerce, social, fully integrated campaigns and more. It's why <strong>U-Studio has just been named Campaign's Global In-House Agency of the Year for a third year running.</strong></p>
                 </div>
-            </section>
+            </motion.section >
 
-            <div className="py-[14vh] bg-[#6aa341]">
+            <motion.div 
+                className="py-[14vh] h-screen"
+                initial={{ background: "#E17327"}} 
+                whileInView={{ background: "#6aa341" }} 
+                viewport={{ amount: 0.27 }} 
+                transition={{
+                    bounce: 0.64,
+                    duration: 1.5,
+                    ease: 'easeInOut'
+                }}
+            >
                 <Container >
                     <h3 className='text-white font-bold text-center text-[2rem]'>Watch What We Delivered</h3>
                     <div className='max-w-[750px] mt-6 mb-6 mx-auto lg:mt-8 lg:mb-0'>
@@ -71,7 +102,7 @@ export default function AboutUs(){
                         </button>
                     </div>
                 </Container>
-            </div>
+            </motion.div>
             
         </Innerpage>
        </>

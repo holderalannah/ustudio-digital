@@ -25,34 +25,34 @@ export default function About() {
 
     const aboutUStudio = [
         {
-            itemHeading: "Oat cake chocolate cake",
+            itemHeading: "Integrated Model",
             itemSvg: <People className='fill-white' />,
-            itemText: "Candy canes tart toffee sugar plum cookie macaroon apple pie.",
+            itemText: "Combines the strengths of both external and in-house agency capabilities",
         },
         {
-            itemHeading: "Oat cake chocolate cake",
-            itemSvg: <Build className='fill-white ' />,
-            itemText: "Candy canes tart toffee sugar plum cookie macaroon apple pie.",
-        },
-        {
-            itemHeading: "Oat cake chocolate cake",
+            itemHeading: "Adaptability and Innovation",
             itemSvg: <Marketing className='fill-white' />,
-            itemText: "Candy canes tart toffee sugar plum cookie macaroon apple pie.",
+            itemText: "It is a dedicated creative studio specifically built in partnership with Unilever to serve their marketing needs",
         },
         {
-            itemHeading: "Oat cake chocolate cake",
-            itemSvg: <QRCode className='fill-white' />,
-            itemText: "Candy canes tart toffee sugar plum cookie macaroon apple pie.",
+            itemHeading: <>Award&#8209;Winning&nbsp;Recognition</>,
+            itemSvg: <Build className='fill-white ' />,
+            itemText: "Has achieved global recognition, repeatedly being named Campaign's global In-House Agency of the Year, highlighting its effectiveness and creative output",
         },
         {
-            itemHeading: "Oat cake chocolate cake",
+            itemHeading: "Agile and Responsive Operations",
             itemSvg: <People className='fill-white' />,
-            itemText: "Candy canes tart toffee sugar plum cookie macaroon apple pie.",
+            itemText: "Known for its ability to provide quick responsiveness, adaptable solutions, and efficient creative execution for Unilever's diverse brands",
         },
         {
-            itemHeading: "Oat cake chocolate cake",
+            itemHeading: "Extensive Growth and Reach",
+            itemSvg: <QRCode className='fill-white' />,
+            itemText: "U-Studio, in partnership with Oliver, has expanded considerably, now employing over 500 people across numerous studios in various countries",
+        },
+        {
+            itemHeading: "Pioneer in AI Integration",
             itemSvg: <SocialMedia className='fill-white' />,
-            itemText: "Candy canes tart toffee sugar plum cookie macaroon apple pie.",
+            itemText: "Actively integrates advanced AI capabilities into its workflow, including the development and utilization of proprietary Generative AI tools like Pencil Pro",
         }
 
     ];
@@ -69,7 +69,7 @@ export default function About() {
                         </div>
                         
                         <div className='pt-10 hidden'>
-                            <p className='px-0 text-center pb-6 text-lg w-full mx-auto lg:px-20 lg:text-xl lg:max-w-[685px]'>At U-Studio, creativity begins with you. As a full-service creative studio, we specialize in bringing your vision to life through thoughtful design, storytelling, and innovative solutions. Our work spans branding, design, and motion, blending strategy with artistry to create meaningful connections between you and your audience. Whether you're building a brand, launching a campaign, or reimagining your identity, we tailor every detail to reflect your unique story and&nbsp;goals.</p>
+                            <p className='px-0 text-center pb-6 text-lg w-full mx-auto lg:px-20 lg:text-xl lg:max-w-[685px]'>U-Studio Toronto is an in-house creative studio, a collaborative effort between Unilever and Oliver Agency. Oliver Agency specializes in establishing and managing bespoke in-house agencies for brands, effectively blending external agency expertise with the benefits of being closely integrated with the client.</p>
 
                             <p className='px-0 text-center pb-6 text-lg w-full mx-auto lg:px-20 lg:text-xl lg:max-w-[685px]'>At U-Studip, it's more than creativity—it's connection. Everything we do is inspired by&nbsp;you.</p>
 

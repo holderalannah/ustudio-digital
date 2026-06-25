@@ -180,8 +180,8 @@ export default function Home() {
 
       <Callout>
           <h2 className="mb-5 text-[30px] leading-[1.12] font-semibold tracking-[-0.03em] sm:text-[38px] lg:text-[44px]">AI Leading Agency</h2>
-          <p className='text-[24px] leading-[1.6]'>Carrot cake brownie dragée tootsie roll apple pie bonbon wafer. Liquorice muffin marzipan sesame snaps tiramisu lollipop dessert cotton candy. Lollipop pastry cupcake danish tiramisu macaroon candy brownie biscuit.</p>
-          <p className='mt-6 text-[24px] leading-[1.6]'>Gummies pudding lemon drops cake topping shortbread pastry danish. Sesame snaps brownie tootsie roll bonbon gingerbread tootsie roll gummies chocolate. Cotton candy cake sweet powder danish jujubes.</p>
+          <p className='text-[24px] leading-[1.6]'>Pencil is an AI-powered platform designed to optimize content creation, particularly for marketing and advertising. It acts as an "enterprise agentic marketing OS," aiming to streamline the entire marketing workflow with AI assistance at every stage.</p>
+          <p className='mt-6 text-[24px] leading-[1.6]'>Pencil can generate various ad creatives, including images, videos, and copy, from text prompts or campaign briefs. It utilizes different AI models from providers like OpenAI, Google, and Adobe.</p>
       </Callout>
 
       
